@@ -42,9 +42,4 @@ Capa Web is designed for cybersecurity teams aiming to streamline their malware 
 
 ### User Interface
 
-<p align="center">
-  <img src="https://github.com/andreisss/Capa-web/assets/10872139/4e2dbdfd-d677-4489-9d69-de4d9f636515" alt="User Interface Screenshot" />
-</p>
-
-
-![image](https://github.com/andreisss/Capa-web/assets/10872139/c84806e0-3d79-4642-ad9c-b27bf723cf76)
+![video1](https://github.com/andreisss/Capa-web/assets/10872139/bf73469e-97d2-4987-a445-3d9da54e7e7a)
