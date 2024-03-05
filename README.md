@@ -4,12 +4,15 @@
 
 ## 🌟 Key Features
 
-![image](https://github.com/andreisss/Capa-web/assets/10872139/19f63e6d-84ea-4a2d-925a-ee5b2ab794b8)
+<p align="center">
+  <img src="https://github.com/andreisss/Capa-web/assets/10872139/19f63e6d-84ea-4a2d-925a-ee5b2ab794b8" alt="Key Features Image"/>
+</p>
 
 Admin login you can -> Create user, Create team, delete user, delete team, assign user to team, edit users, eedit teams, change settings.
 
-![image](https://github.com/andreisss/Capa-web/assets/10872139/cdf9608a-a7c9-4ceb-8a53-a278b16da041)
-
+<p align="center">
+  <img src="https://github.com/andreisss/Capa-web/assets/10872139/cdf9608a-a7c9-4ceb-8a53-a278b16da041" alt="Admin Features Image"/>
+</p>
 
 ### 💡 User-Friendly Interface
 
