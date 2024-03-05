@@ -10,10 +10,6 @@
 - **Intuitive Navigation**: Seamlessly explore analysis results with our intuitive dashboard.
 - **Accessible Insights**: Gain quick understanding of analyzed malware capabilities and tactics.
 
-### 📊 Enhanced Report Visualization
-
-- **Visual Data Representation**: Leverage visualization to present complex data clearly and concisely.
-- **Actionable Insights**: Receive reports designed to facilitate fast decision-making and response.
 
 ### 👥 Team Collaboration
 
