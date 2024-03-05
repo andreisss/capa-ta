@@ -26,7 +26,7 @@ Capa Web is crafted for cybersecurity teams looking to streamline their malware 
 
 ### Unique Features
 
-- ** Admin access -> Create user, Create team, delete user, delete team, assign user to team, edit users, eedit teams, change settings.**
+- **Admin access -> Create user, Create team, delete user, delete team, assign user to team, edit users, eedit teams, change settings**
 
 
 - **Dedicated Server for Sample Uploads**: A unique server setup simplifies the process of submitting new malware samples, ensuring secure and efficient analysis.
