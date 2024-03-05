@@ -10,9 +10,9 @@
 - **Intuitive Navigation**: Seamlessly explore analysis results with our intuitive dashboard.
 - **Accessible Insights**: Gain quick understanding of analyzed malware capabilities and tactics.
 
-**Capa web can be used directly in Python - Flask framework to customize it**
+### 💡Capa web can be used directly in Python - Flask framework to customize it**
 
-**Documentation is here (dedicated site) or here (repo directory)**
+### 💡Documentation is here (dedicated site) or here (repo directory)**
 
 ### 👥 Team Collaboration
 
