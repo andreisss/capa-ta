@@ -10,6 +10,9 @@
 - **Intuitive Navigation**: Seamlessly explore analysis results with our intuitive dashboard.
 - **Accessible Insights**: Gain quick understanding of analyzed malware capabilities and tactics.
 
+###Capa web can be used directly in Python - Flask framework to customize it###
+
+###Documentation is here (dedicated site) or here (repo directory)###
 
 ### 👥 Team Collaboration
 
@@ -42,4 +45,3 @@ Capa Web is designed for cybersecurity teams aiming to streamline their malware 
 
 ### User Interface
 
-![video1](https://github.com/andreisss/Capa-web/assets/10872139/bf73469e-97d2-4987-a445-3d9da54e7e7a)
