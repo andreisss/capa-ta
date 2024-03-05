@@ -28,7 +28,7 @@ Capa Web is designed for cybersecurity teams aiming to streamline their malware 
 
 ### Admin gui
 
-![admin](https://github.com/andreisss/Capa-web/assets/10872139/762f039d-d9a0-448b-8fef-c9d5cb1a9721)
+![admin (1)](https://github.com/andreisss/Capa-web/assets/10872139/122bfbfc-c58d-4063-a7ed-7f08901680fb)
 
 
 ### Admin settings
