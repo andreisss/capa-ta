@@ -22,14 +22,13 @@
 
 ## 🚀 Collaborate, Analyze, and Respond
 
-Capa Web is crafted for cybersecurity teams looking to streamline their malware analysis process. Our platform encourages collaboration and enhances the ability to act on critical information swiftly, whether you're investigating new malware samples or conducting routine analyses.
+Capa Web is crafted for cybersecurity teams looking to streamline their malware analysis process. Our platform encourages collaboration and enhances the ability to act on critical information swiftly, whether you're investigating new malware samples or conducting routine analyses. Dedicated Server for Sample Uploads: A unique server setup simplifies the process of submitting new malware samples.
+
 
 ### Unique Features
 
 - **Comprehensive Admin Control: Administrators are empowered with full access to manage the platform, including capabilities to create and remove users and teams, assign members to specific teams, and modify user and team profiles, alongside adjusting system settings for optimal performance.**
 
-
-- **Dedicated Server for Sample Uploads**: A unique server setup simplifies the process of submitting new malware samples, ensuring secure and efficient analysis.
 
 <p align="center">
   <img src="https://github.com/andreisss/Capa-web/assets/10872139/19f63e6d-84ea-4a2d-925a-ee5b2ab794b8" alt="Key Features Image"/>
