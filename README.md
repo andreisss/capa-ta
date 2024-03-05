@@ -1,6 +1,6 @@
 # Capa Web: Enhance Your Malware Analysis
 
-**Capa Web** extends the capabilities of the esteemed [Capa tool by Mandiant](https://github.com/mandiant/capa), a powerful utility for the static analysis of malware, by integrating it into an innovative web application. Our aim is to make advanced malware analysis more accessible and efficient for cybersecurity professionals and enthusiasts alike through a user-friendly interface.
+**Capa Web** extends the capabilities of the esteemed [Capa tool by Mandiant](https://github.com/mandiant/capa), a powerful utility for the static analysis of malware, by integrating it into an innovative web application. Our aim is to make  malware analysis more accessible and efficient for cybersecurity professionals and enthusiasts alike through a user-friendly interface.
 
 ## 🌟 Key Features
 
