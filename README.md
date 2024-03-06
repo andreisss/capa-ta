@@ -1,4 +1,4 @@
-# Capa Web: Enhance Your Malware Analysis
+# Capa Web Layer Enhance Your Malware Analysis
 
 ![PyPI](https://img.shields.io/pypi/v/capa-web)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
@@ -6,19 +6,22 @@
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-web/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa-web)
 
-Capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report, and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
 
-## Blog Posts
-Check out our capa blog posts:
-- [One server: Exploring Executable Run-Time Behavior with the Capa Web app](#)
-- [capa 2.0: Better, Stronger, Faster](#)
-- [capa team collaboration: Automatically Identify Malware Capabilities and shre with your team](#)
+The Capa web layer leverages the **Capa tool** to detect capabilities in executable files, offering a collaborative platform with the following features:
 
-### 💡 User-Friendly Interface
+- **Team Collaboration:** 
+  - Create teams to share analysis reports effortlessly.
+  - Assign users to specific teams to streamline workflow.
 
-- **Simplified Binary Submission**: Easily upload binaries without the need for complex command-line operations.
-- **Intuitive Navigation**: Seamlessly explore analysis results with our intuitive dashboard.
-- **Accessible Insights**: Gain quick understanding of analyzed malware capabilities and tactics.
+- **User Management:**
+  - Facilitate the creation of user accounts for personalized access.
+  - Enhance security and accountability within the team environment.
+
+- **Participation and Collaboration:**
+  - Emphasize the importance of active participation and collaboration.
+  - Foster a culture of shared knowledge and collective problem-solving.
+
+Utilize the Capa web layer to enhance your team's executable analysis capabilities and collaboration efficiency.
 
 #### 💡Capa web can be used directly in Python - Flask framework to customize it
 
