@@ -28,7 +28,7 @@ Enhance your team's executable analysis capabilities from the outset with **Capa
 - **Streamlined Analysis:** Leverage Capa-ta to dissect and understand executables with unparalleled efficiency.
 - **Team Empowerment:** Equip your team with the right tools from the get-go, ensuring a strong foundation for malware analysis.
 
-## Run the app using Gunicorn: gunicorn -w 4 -b 195.181.123.123:7665 app:app
+#### Run the app using Gunicorn: gunicorn -w 4 -b 195.181.123.123:7665 app:app
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
