@@ -8,7 +8,7 @@
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa)
 
-capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report, and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
+Capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report, and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
 
 ## Blog Posts
 Check out our capa blog posts:
