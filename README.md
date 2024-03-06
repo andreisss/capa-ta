@@ -5,8 +5,8 @@
 ![Last Release](https://img.shields.io/github/release-date/yourusername/capa)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
 ![CI Status](https://github.com/yourusername/capa/actions/workflows/ci.yml/badge.svg)
-![Downloads](https://img.shields.io/github/downloads/yourusername/capa/total.svg)
-![License](https://img.shields.io/github/license/yourusername/capa)
+![Downloads](https://img.shields.io/github/downloads/andreisss/capa/total.svg)
+![License](https://img.shields.io/github/license/andreisss/capa)
 
 capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report, and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
 
