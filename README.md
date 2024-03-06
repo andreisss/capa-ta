@@ -3,8 +3,8 @@
 ![PyPI](https://img.shields.io/pypi/v/capa-web)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
-![Downloads](https://img.shields.io/github/downloads/andreisss/capa-web/total.svg)
-![License](https://img.shields.io/github/license/andreisss/capa-web)
+![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
+![License](https://img.shields.io/github/license/andreisss/capa-ta)
 
 
 The capa-ta web leverages the **Capa tool** to detect capabilities in executable files, offering a collaborative platform with the following features:
