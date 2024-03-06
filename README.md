@@ -1,8 +1,20 @@
 # Capa Web: Enhance Your Malware Analysis
 
-**Capa Web** extends the capabilities of the esteemed [Capa tool by Mandiant](https://github.com/mandiant/capa), integrating it into an innovative web application. Our aim is to make malware analysis more accessible and efficient for cybersecurity professionals and enthusiasts alike through a user-friendly interface.
+![PyPI](https://img.shields.io/pypi/v/capa)
+![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
+![Last Release](https://img.shields.io/github/release-date/yourusername/capa)
+![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
+![CI Status](https://github.com/yourusername/capa/actions/workflows/ci.yml/badge.svg)
+![Downloads](https://img.shields.io/github/downloads/yourusername/capa/total.svg)
+![License](https://img.shields.io/github/license/yourusername/capa)
 
-## 🌟 Key Features
+capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report, and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
+
+## Blog Posts
+Check out our capa blog posts:
+- [One server: Exploring Executable Run-Time Behavior with the Capa Web app](#)
+- [capa 2.0: Better, Stronger, Faster](#)
+- [capa team collaboration: Automatically Identify Malware Capabilities and shre with your team](#)
 
 ### 💡 User-Friendly Interface
 
