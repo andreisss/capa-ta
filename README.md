@@ -1,4 +1,4 @@
-# Capa Web Layer Enhance Your Malware Analysis
+# Capa-ta - Enhance Your Malware Analysis
 
 ![PyPI](https://img.shields.io/pypi/v/capa-web)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/github/license/andreisss/capa-web)
 
 
-The Capa web layer leverages the **Capa tool** to detect capabilities in executable files, offering a collaborative platform with the following features:
+The capa-ta web leverages the **Capa tool** to detect capabilities in executable files, offering a collaborative platform with the following features:
 
 - **Team Collaboration:** 
   - Create teams to share analysis reports effortlessly.
@@ -17,28 +17,12 @@ The Capa web layer leverages the **Capa tool** to detect capabilities in executa
   - Facilitate the creation of user accounts for personalized access.
   - Enhance security and accountability within the team environment.
 
-- **Participation and Collaboration:**
+- **🚀Participation and Collaboration:**
   - Emphasize the importance of active participation and collaboration.
   - Foster a culture of shared knowledge and collective problem-solving.
 
 Utilize the Capa web layer to enhance your team's executable analysis capabilities and collaboration efficiency.
 
-#### 💡Capa web can be used directly in Python - Flask framework to customize it
-
-#### 💡Documentation is here (dedicated site) or here (repo directory)
-
-### 👥 Team Collaboration
-
-- **Collaborative Spaces**: Join dedicated teams for effective collaboration and sharing of analysis reports.
-- **Shared Insights**: Benefit from a shared space for each team, enhancing collective understanding and strategies.
-
-## 🚀 Collaborate, Analyze, and Respond
-
-Capa Web is designed for cybersecurity teams aiming to streamline their malware analysis process, encouraging collaboration and swift action on critical information. 
-
-### Unique Features
-
-- **Comprehensive Admin Control**: Full management access for administrators to create and remove users and teams, assign members, edit profiles, and adjust system settings.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
