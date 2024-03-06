@@ -38,7 +38,7 @@ Capa Web is designed for cybersecurity teams aiming to streamline their malware 
 
 - **Comprehensive Admin Control**: Full management access for administrators to create and remove users and teams, assign members, edit profiles, and adjust system settings.
 
-  ----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 
 ### Admin gui
 
