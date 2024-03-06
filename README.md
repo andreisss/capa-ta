@@ -4,7 +4,6 @@
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![Last Release](https://img.shields.io/github/release-date/andreisss/capa)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
-![CI Status](https://github.com/andreisss/capa/actions/workflows/ci.yml/badge.svg)
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa)
 
