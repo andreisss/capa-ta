@@ -1,11 +1,11 @@
 # Capa Web: Enhance Your Malware Analysis
 
-![PyPI](https://img.shields.io/pypi/v/capa)
+![PyPI](https://img.shields.io/pypi/v/capa-web)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
-![Last Release](https://img.shields.io/github/release-date/andreisss/capa)
+![Last Release](https://img.shields.io/github/release-date/andreisss/capa-web)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
-![Downloads](https://img.shields.io/github/downloads/andreisss/capa/total.svg)
-![License](https://img.shields.io/github/license/andreisss/capa)
+![Downloads](https://img.shields.io/github/downloads/andreisss/capa-web/total.svg)
+![License](https://img.shields.io/github/license/andreisss/capa-web)
 
 Capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report, and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
 
