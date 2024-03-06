@@ -30,6 +30,7 @@ Enhance your team's executable analysis capabilities from the outset with **Capa
 
 ```bash
 gunicorn -w 4 -b 143.181.123.123:7665 app:app
+```
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 ### Admin gui
