@@ -1,93 +1,55 @@
 # Capa-ta - Enhance Your Malware Analysis
 
-- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving time of manual analysis.
-- **Extensive Rule Set:** With over 1000+ rules, Capa-ta can recognize a wide range of malware characteristics.
-- **Easy to Use:** Designed for usability, it integrates seamlessly into existing workflows.
-
-The capa-ta web leverages the **Capa tool** and **VT** API to detect capabilities in executable files, offering a collaborative platform with the following features:
-
 ![PyPI](https://img.shields.io/pypi/v/capa-ta)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa-ta)
 
+Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in executable files, offering a platform for automated malware analysis and team collaboration.
+
+## Key Features
+
+- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving manual analysis time.
+- **Extensive Rule Set:** Over 1000+ rules to recognize a wide range of malware characteristics.
+- **Easy to Use:** Integrates seamlessly into existing workflows.
+- **Team Collaboration:** Share analysis reports and manage team workflows efficiently.
+
 ## Based On
 
-This tool leverages the capabilities of two major resources:
+- **[Capa](https://github.com/mandiant/capa):** An open-source tool by Mandiant for automatic pattern detection in binary files.
+- **[VT API](https://docs.virustotal.com/):** VirusTotal's comprehensive file scanning API for applications.
 
-- **Capa:** An open-source tool designed for the automatic detection of patterns in binary files. It's developed and maintained by Mandiant. For more details, visit [Capa on GitHub](https://github.com/mandiant/capa).
+## Admin Features
 
-- **VT API:** The VirusTotal API allows for easy integration of VT's comprehensive file scanning capabilities into applications. For API documentation and usage, see the [VirusTotal API Documentation](https://docs.virustotal.com/).
+### User and Team Management
 
-Capa-ta leverages advanced analysis techniques to dissect and understand malware and give your team the possibility to analyze malware.
+- **Create, Edit, Delete Users:** Manage user access and roles.
+- **Create, Modify, Delete Teams:** Organize users for better collaboration.
 
-## Admin 
-----------------------------------------------------------------------------------------
-- **User Management**
-  - **Create User:** Add new users to the application.
-  - **Edit User:** Update user information and roles.
-  - **Delete User:** Remove users from the application.
+### Settings Configuration
 
-- **Team Management**
-  - **Create Team:** Establish new teams for organizing users.
-  - **Modify Team:** Change team details or member assignments.
+- **VT API Key:** Integrate VirusTotal's scanning capabilities.
+- **Admin Password:** Secure admin access.
+- **Capa Path & Analysis Folder:** Specify paths for Capa rules and analysis reports.
+- **Allowed Extensions & Upload Folder:** Control file uploads.
 
-- **Settings**
-  - **Modify Settings:** Update application-wide settings, including:
-    - **VT API Key:** Configure the VirusTotal API key for malware analysis.
-    - **Admin Password:** Set or change the admin password for enhanced security.
-    - **Capa Path:** Specify the path to Capa rules for automated analysis.
-    - **Analysis Folder:** Designate a folder for storing analysis reports.
-    - **Allowed extensions:** Decide the extensions which can be uploaded.
-    - **Upload folder:** Decide which folder to upload the files.
-   
-### Admin gui
+### Admin GUI Access
 
-Default Access: admin - password123
+Default access credentials: `admin / password123`
 
-- **Create Users**: Allows administrators to add new users to the application, specifying essential information like usernames, passwords, and roles.
+![Admin GUI Example](https://github.com/andreisss/capa-ta/assets/admin_gui_example.png)
 
-- **Create Teams**: Facilitates the creation of teams within the application, enabling better organization and collaboration among users.
+## User Features
 
-- **Change User Team**: Enables the reassignment of users from one team to another, supporting flexible team management and project reorganization.
+- **Upload File:** Analyze files with ease.
+- **Collaborate with Your Team:** Use the Default team or assign specific teams for project management.
 
-- **Delete User**: Provides the option to remove users from the application, ensuring that access is tightly controlled and can be revoked when necessary.
+![User Upload Example](https://github.com/andreisss/capa-ta/assets/user_upload_example.png)
 
-- **Delete Team**: Allows for the deletion of teams, making it easy to manage the application's organizational structure as projects evolve or conclude.
+## Quick Start
 
-Each of these functions is designed to simplify administrative tasks, making it straightforward to manage the application's user base and organizational setup.
-
-![image](https://github.com/andreisss/capa-ta/assets/10872139/01a286e6-91ac-4e4a-8c6e-61d247dc4e5c)
-
-----------------------------------------------------------------------------------------------------------------------------------------
-      
-## User
-----------------------------------------------------------------------------------------
-- **Upload File:** Submit files for analysis or review.
-- **Collaborate with Your Team:** Work together with team members on projects or analyses.
-- **Default Team:** Users not assigned to a specific team can use the Default team for their activities.
-
-
-![image](https://github.com/andreisss/capa-ta/assets/10872139/45ee9a28-1e2b-4f10-b322-4cf39b9ec929)
-
-----------------------------------------------------------------------------------------------------------------------------------------
-
-
-- **Team Collaboration:** 
-  - Create teams to share analysis reports effortlessly.
-  - Assign users to specific teams to streamline workflow.
-
-- **User Management:**
-  - Facilitate the creation of user accounts for personalized access.
-  - Enhance security and accountability within the team environment.
-
-- **🚀Participation and Collaboration:**
-  - Emphasize the importance of active participation and collaboration.
-  - Foster a culture of shared knowledge and collective problem-solving.
-
-
-Enhance your team's executable analysis capabilities from the outset with **Capa-ta**. Dive into your first malware analysis approach armed with a tool designed to streamline and empower your investigative processes.
+Launch Capa-ta with Gunicorn:
 
 ```bash
 gunicorn -w 4 -b 143.181.123.123:7665 app:app
