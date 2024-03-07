@@ -50,6 +50,8 @@ gunicorn -w 4 -b 143.181.123.123:7665 app:app
 
 ### Admin gui
 
+Default Access: admin - password123
+
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/01a286e6-91ac-4e4a-8c6e-61d247dc4e5c)
 
 # Application Functions
