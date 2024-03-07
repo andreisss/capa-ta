@@ -41,6 +41,30 @@ Capa-ta leverages advanced analysis techniques to dissect and understand malware
     - **Analysis Folder:** Designate a folder for storing analysis reports.
     - **Allowed extensions:** Decide the extensions which can be uploaded.
     - **Upload folder:** Decide which folder to upload the files.
+   
+### Admin gui
+
+Default Access: admin - password123
+
+# Application Functions
+
+Our application offers a comprehensive set of functions to manage users and teams efficiently. Here's a quick overview of the key functionalities:
+
+- **Create Users**: Allows administrators to add new users to the application, specifying essential information like usernames, passwords, and roles.
+
+- **Create Teams**: Facilitates the creation of teams within the application, enabling better organization and collaboration among users.
+
+- **Change User Team**: Enables the reassignment of users from one team to another, supporting flexible team management and project reorganization.
+
+- **Delete User**: Provides the option to remove users from the application, ensuring that access is tightly controlled and can be revoked when necessary.
+
+- **Delete Team**: Allows for the deletion of teams, making it easy to manage the application's organizational structure as projects evolve or conclude.
+
+Each of these functions is designed to simplify administrative tasks, making it straightforward to manage the application's user base and organizational setup.
+
+![image](https://github.com/andreisss/capa-ta/assets/10872139/01a286e6-91ac-4e4a-8c6e-61d247dc4e5c)
+
+----------------------------------------------------------------------------------------------------------------------------------------
       
 ## User
 ----------------------------------------------------------------------------------------
@@ -74,55 +98,10 @@ gunicorn -w 4 -b 143.181.123.123:7665 app:app
 ```
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-### Admin gui
-
-Default Access: admin - password123
-
-![image](https://github.com/andreisss/capa-ta/assets/10872139/01a286e6-91ac-4e4a-8c6e-61d247dc4e5c)
-
-# Application Functions
-
-Our application offers a comprehensive set of functions to manage users and teams efficiently. Here's a quick overview of the key functionalities:
-
-- **Create Users**: Allows administrators to add new users to the application, specifying essential information like usernames, passwords, and roles.
-
-- **Create Teams**: Facilitates the creation of teams within the application, enabling better organization and collaboration among users.
-
-- **Change User Team**: Enables the reassignment of users from one team to another, supporting flexible team management and project reorganization.
-
-- **Delete User**: Provides the option to remove users from the application, ensuring that access is tightly controlled and can be revoked when necessary.
-
-- **Delete Team**: Allows for the deletion of teams, making it easy to manage the application's organizational structure as projects evolve or conclude.
-
-Each of these functions is designed to simplify administrative tasks, making it straightforward to manage the application's user base and organizational setup.
-
-----------------------------------------------------------------------------------------------------------------------------------------
 
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/fc308b42-abc7-41e6-af00-d1b9d0a14dcd)
 
-----------------------------------------------------------------------------------------------------------------------------------------
-
-
-# Admin Settings
-
-### Configuration Table
-
-<div align="center">
-
-| Setting               | Description                                           |
-|-----------------------|-------------------------------------------------------|
-| Upload Folder         | Directory for storing uploaded files.                 |
-| Capa Rules Path       | Folder path for Capa rules.                           |
-| Analysis Files Folder | Location for analysis reports and temporary files.    |
-| App Secret Key        | Secret key for securing cookies and sessions.         |
-| Allowed Extensions    | File types permitted for upload.                      |
-| Admin Password        | Password for administrative access.                   |
-| VirusTotal API Key    | API key for VirusTotal integration.                   |
-
-</div>
-
-----------------------------------------------------------------------------------------------------------------------------------------
 
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/6473f466-15a8-4a58-ab2e-70ef66ef7295)
