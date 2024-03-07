@@ -59,17 +59,7 @@ Funtions: Create Users, Create Teams, Change User team, Delete User, Delete Team
 
 Configure your application with ease using the admin settings page. Here, you'll find options for customizing various functionalities and security settings:
 
-## Functions Settings Page
-
 Below is a detailed overview of each setting available on the Functions Settings Page:
-
-- **Upload Folder:** Directory where uploaded files are stored.
-- **Capa Rules Path:** Path to the folder containing Capa rules for malware analysis.
-- **Analysis Files Folder:** Location where analysis reports and temporary files are kept.
-- **App Secret Key:** A secret key used for securing cookies and sessions.
-- **Allowed Extensions:** Specifies the types of files that can be uploaded.
-- **Admin Password:** Password for admin access to secure areas of the application.
-- **VirusTotal API Key:** Your API key for integrating VirusTotal's scanning capabilities.
 
 ### Configuration Table
 
