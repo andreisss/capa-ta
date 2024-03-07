@@ -6,6 +6,14 @@
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa-ta)
 
+Capa-ta leverages advanced analysis techniques to dissect and understand malware at a deeper level. With over 1000 rules and growing, 
+Capa-ta helps security researchers and analysts automatically identify malware capabilities, making the analysis process faster and more comprehensive.
+
+## Features
+
+- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving hours of manual analysis.
+- **Extensive Rule Set:** With over 1000+ rules, Capa-ta can recognize a wide range of malware characteristics.
+- **Easy to Use:** Designed for usability, it integrates seamlessly into existing workflows.
 
 The capa-ta web leverages the **Capa tool** to detect capabilities in executable files, offering a collaborative platform with the following features:
 
