@@ -78,6 +78,8 @@ Each of these functions is designed to simplify administrative tasks, making it 
 
 ### Configuration Table
 
+<div align="center">
+
 | Setting               | Description                                           |
 |-----------------------|-------------------------------------------------------|
 | Upload Folder         | Directory for storing uploaded files.                 |
@@ -88,7 +90,10 @@ Each of these functions is designed to simplify administrative tasks, making it 
 | Admin Password        | Password for administrative access.                   |
 | VirusTotal API Key    | API key for VirusTotal integration.                   |
 
+</div>
+
 Adjust these settings as needed to tailor the application to your specific requirements and security standards.
+
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/6473f466-15a8-4a58-ab2e-70ef66ef7295)
 
