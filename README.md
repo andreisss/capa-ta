@@ -14,8 +14,8 @@ This tool leverages the capabilities of two major resources:
 
 - **VT API:** The VirusTotal API allows for easy integration of VT's comprehensive file scanning capabilities into applications. For API documentation and usage, see the [VirusTotal API Documentation](https://docs.virustotal.com/).
 
-Capa-ta leverages advanced analysis techniques to dissect and understand malware at a deeper level.
-Capa-ta helps security researchers and analysts automatically identify malware capabilities, making the analysis process faster and more comprehensive.
+Capa-ta leverages advanced analysis techniques to dissect and understand malware and give your team the possibility to analyze malware.
+
 
 ## Features
 
