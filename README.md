@@ -1,6 +1,6 @@
 # Capa-ta - Enhance Your Malware Analysis
 
-![PyPI](https://img.shields.io/pypi/v/capa-web)
+![PyPI](https://img.shields.io/pypi/v/capa-ta)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
@@ -35,10 +35,15 @@ gunicorn -w 4 -b 143.181.123.123:7665 app:app
 
 ### Admin gui
 
+Funtions: Create Users, Create Teams, Change User team, Delete User, Delete Team
+
 ![admin (2)](https://github.com/andreisss/Capa-web/assets/10872139/d4a2084e-7714-462d-9db5-3f42f8b22923)
 
 
+
 ### Admin settings
+
+Funcions Settings Page:  Upload Folder ,  Capa Rules Path ,  Analysis Files Folder ,  App Secret Key ,  Allowed Extensions , Admin Password,  VirusTotal API Key 
 
 
 <p align="center">
