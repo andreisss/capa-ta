@@ -42,7 +42,7 @@ Capa-ta leverages advanced analysis techniques to dissect and understand malware
     - **Allowed extensions:** Decide the extensions which can be uploaded.
     - **Upload folder:** Decide which folder to upload the files.
       
-## User Side
+## User
 ----------------------------------------------------------------------------------------
 - **Upload File:** Submit files for analysis or review.
 - **Collaborate with Your Team:** Work together with team members on projects or analyses.
