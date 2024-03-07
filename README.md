@@ -58,7 +58,8 @@ gunicorn -w 4 -b 143.181.123.123:7665 app:app
 
 
 
-![image](https://github.com/andreisss/capa-ta/assets/10872139/fc308b42-abc7-41e6-af00-d1b9d0a14dcd)
+![image](https://github.com/andreisss/capa-ta/assets/10872139/035ebbd3-81de-4d4d-91b1-618bac904e68)
+![image](https://github.com/andreisss/capa-ta/assets/10872139/49830c60-699e-490b-bbaf-3fd66b95b717)
 
 
 
