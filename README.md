@@ -74,8 +74,6 @@ Each of these functions is designed to simplify administrative tasks, making it 
 
 # Admin Settings
 
-Configure your application with ease using the admin settings page. Here, you'll find options for customizing various functionalities and security settings:
-
 ### Configuration Table
 
 | Setting               | Description                                           |
