@@ -6,6 +6,14 @@
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa-ta)
 
+## Based On
+
+This tool leverages the capabilities of two major resources:
+
+- **Capa:** An open-source tool designed for the automatic detection of patterns in binary files. It's developed and maintained by Mandiant. For more details, visit [Capa on GitHub](https://github.com/mandiant/capa).
+
+- **VT API:** The VirusTotal API allows for easy integration of VT's comprehensive file scanning capabilities into applications. For API documentation and usage, see the [VirusTotal API Documentation](https://docs.virustotal.com/).
+
 Capa-ta leverages advanced analysis techniques to dissect and understand malware at a deeper level.
 Capa-ta helps security researchers and analysts automatically identify malware capabilities, making the analysis process faster and more comprehensive.
 
