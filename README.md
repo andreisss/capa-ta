@@ -38,14 +38,14 @@ Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in exe
 
 Default access credentials: `admin / password123`
 
-![Admin GUI Example](https://github.com/andreisss/capa-ta/assets/admin_gui_example.png)
+![image](https://github.com/andreisss/capa-ta/assets/10872139/8e217f01-9e5d-4624-b6d7-53e635b44316)
 
 ## User Features
 
 - **Upload File:** Analyze files with ease.
 - **Collaborate with Your Team:** Use the Default team or assign specific teams for project management.
 
-![User Upload Example](https://github.com/andreisss/capa-ta/assets/user_upload_example.png)
+![image](https://github.com/andreisss/capa-ta/assets/10872139/6731e571-1d2b-481e-9fe0-aaf7be167023)
 
 ## Quick Start
 
