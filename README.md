@@ -16,6 +16,30 @@ This tool leverages the capabilities of two major resources:
 
 Capa-ta leverages advanced analysis techniques to dissect and understand malware and give your team the possibility to analyze malware.
 
+- **User Management**
+  - **Create User:** Add new users to the application.
+  - **Edit User:** Update user information and roles.
+  - **Delete User:** Remove users from the application.
+
+- **Team Management**
+  - **Create Team:** Establish new teams for organizing users.
+  - **Modify Team:** Change team details or member assignments.
+
+- **Settings**
+  - **Modify Settings:** Update application-wide settings, including:
+    - **VT API Key:** Configure the VirusTotal API key for malware analysis.
+    - **Admin Password:** Set or change the admin password for enhanced security.
+    - **Capa Path:** Specify the path to Capa rules for automated analysis.
+    - **Analysis Folder:** Designate a folder for storing analysis reports.
+    - **Allowed extensions:** Decide the extensions which can be uploaded.
+    - **Upload folder:** Decide which folder to upload the files.
+      
+## User Side
+
+- **Upload File:** Submit files for analysis or review.
+- **Collaborate with Your Team:** Work together with team members on projects or analyses.
+- **Default Team:** Users not assigned to a specific team can use the Default team for their activities.
+
 
 ## Features
 
