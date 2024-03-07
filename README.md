@@ -103,17 +103,28 @@ Each of these functions is designed to simplify administrative tasks, making it 
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/6473f466-15a8-4a58-ab2e-70ef66ef7295)
 
-Team page:
+# Team page:
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/d615e4c7-25ed-4395-8d3c-c803e75acc90)
 
-Report Page:
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Report Page:
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/98a5c8a7-f2c9-43a8-a119-b5fd6acaf32d)
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/93c0e7b7-deef-4802-ab32-660bc11105b9)
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/73a7e80b-e26d-46d5-95d4-0bcbb033bd5d)
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/b34e68a7-4917-4212-a933-d7876e3657f8)
 
