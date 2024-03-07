@@ -69,7 +69,7 @@ Our application offers a comprehensive set of functions to manage users and team
 Each of these functions is designed to simplify administrative tasks, making it straightforward to manage the application's user base and organizational setup.
 
 
-![admin (2)](https://github.com/andreisss/Capa-web/assets/10872139/d4a2084e-7714-462d-9db5-3f42f8b22923)
+![image](https://github.com/andreisss/capa-ta/assets/10872139/fc308b42-abc7-41e6-af00-d1b9d0a14dcd)
 
 
 # Admin Settings
