@@ -52,8 +52,22 @@ gunicorn -w 4 -b 143.181.123.123:7665 app:app
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/01a286e6-91ac-4e4a-8c6e-61d247dc4e5c)
 
+# Application Functions
 
-Funtions: Create Users, Create Teams, Change User team, Delete User, Delete Team
+Our application offers a comprehensive set of functions to manage users and teams efficiently. Here's a quick overview of the key functionalities:
+
+- **Create Users**: Allows administrators to add new users to the application, specifying essential information like usernames, passwords, and roles.
+
+- **Create Teams**: Facilitates the creation of teams within the application, enabling better organization and collaboration among users.
+
+- **Change User Team**: Enables the reassignment of users from one team to another, supporting flexible team management and project reorganization.
+
+- **Delete User**: Provides the option to remove users from the application, ensuring that access is tightly controlled and can be revoked when necessary.
+
+- **Delete Team**: Allows for the deletion of teams, making it easy to manage the application's organizational structure as projects evolve or conclude.
+
+Each of these functions is designed to simplify administrative tasks, making it straightforward to manage the application's user base and organizational setup.
+
 
 ![admin (2)](https://github.com/andreisss/Capa-web/assets/10872139/d4a2084e-7714-462d-9db5-3f42f8b22923)
 
