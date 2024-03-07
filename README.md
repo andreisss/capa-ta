@@ -75,11 +75,8 @@ Below is a detailed overview of each setting available on the Functions Settings
 
 Adjust these settings as needed to tailor the application to your specific requirements and security standards.
 
+![image](https://github.com/andreisss/capa-ta/assets/10872139/6473f466-15a8-4a58-ab2e-70ef66ef7295)
 
-
-<p align="center">
-  <img src="https://github.com/andreisss/Capa-web/assets/10872139/cdf9608a-a7c9-4ceb-8a53-a278b16da041" alt="Admin Control Panel" />
-</p>
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
