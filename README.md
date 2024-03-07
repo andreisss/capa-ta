@@ -1,5 +1,11 @@
 # Capa-ta - Enhance Your Malware Analysis
 
+- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving time of manual analysis.
+- **Extensive Rule Set:** With over 1000+ rules, Capa-ta can recognize a wide range of malware characteristics.
+- **Easy to Use:** Designed for usability, it integrates seamlessly into existing workflows.
+
+The capa-ta web leverages the **Capa tool** and **VT** API to detect capabilities in executable files, offering a collaborative platform with the following features:
+
 ![PyPI](https://img.shields.io/pypi/v/capa-ta)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
@@ -42,14 +48,6 @@ Capa-ta leverages advanced analysis techniques to dissect and understand malware
 - **Collaborate with Your Team:** Work together with team members on projects or analyses.
 - **Default Team:** Users not assigned to a specific team can use the Default team for their activities.
 
-
-## Features
-
-- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving time of manual analysis.
-- **Extensive Rule Set:** With over 1000+ rules, Capa-ta can recognize a wide range of malware characteristics.
-- **Easy to Use:** Designed for usability, it integrates seamlessly into existing workflows.
-
-The capa-ta web leverages the **Capa tool** and **VT** API to detect capabilities in executable files, offering a collaborative platform with the following features:
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/45ee9a28-1e2b-4f10-b322-4cf39b9ec929)
 
