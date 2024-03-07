@@ -50,6 +50,9 @@ gunicorn -w 4 -b 143.181.123.123:7665 app:app
 
 ### Admin gui
 
+![image](https://github.com/andreisss/capa-ta/assets/10872139/01a286e6-91ac-4e4a-8c6e-61d247dc4e5c)
+
+
 Funtions: Create Users, Create Teams, Change User team, Delete User, Delete Team
 
 ![admin (2)](https://github.com/andreisss/Capa-web/assets/10872139/d4a2084e-7714-462d-9db5-3f42f8b22923)
