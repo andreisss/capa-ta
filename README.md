@@ -102,17 +102,6 @@ Report Page:
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/93c0e7b7-deef-4802-ab32-660bc11105b9)
 
-VT info
-
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/73a7e80b-e26d-46d5-95d4-0bcbb033bd5d)
 
 
-
-
-
-
--------------------------------------------------------------------------------------------------------------------------------------------
-
-### User Interface
-
-![video1 (5)](https://github.com/andreisss/Capa-web/assets/10872139/6eadfd08-3687-4f54-8469-3fa19080e399)
