@@ -46,10 +46,6 @@ Capa-ta leverages advanced analysis techniques to dissect and understand malware
 
 Default Access: admin - password123
 
-# Application Functions
-
-Our application offers a comprehensive set of functions to manage users and teams efficiently. Here's a quick overview of the key functionalities:
-
 - **Create Users**: Allows administrators to add new users to the application, specifying essential information like usernames, passwords, and roles.
 
 - **Create Teams**: Facilitates the creation of teams within the application, enabling better organization and collaboration among users.
