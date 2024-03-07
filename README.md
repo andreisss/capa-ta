@@ -55,10 +55,36 @@ Funtions: Create Users, Create Teams, Change User team, Delete User, Delete Team
 ![admin (2)](https://github.com/andreisss/Capa-web/assets/10872139/d4a2084e-7714-462d-9db5-3f42f8b22923)
 
 
+# Admin Settings
 
-### Admin settings
+Configure your application with ease using the admin settings page. Here, you'll find options for customizing various functionalities and security settings:
 
-Funcions Settings Page:  Upload Folder ,  Capa Rules Path ,  Analysis Files Folder ,  App Secret Key ,  Allowed Extensions , Admin Password,  VirusTotal API Key 
+## Functions Settings Page
+
+Below is a detailed overview of each setting available on the Functions Settings Page:
+
+- **Upload Folder:** Directory where uploaded files are stored.
+- **Capa Rules Path:** Path to the folder containing Capa rules for malware analysis.
+- **Analysis Files Folder:** Location where analysis reports and temporary files are kept.
+- **App Secret Key:** A secret key used for securing cookies and sessions.
+- **Allowed Extensions:** Specifies the types of files that can be uploaded.
+- **Admin Password:** Password for admin access to secure areas of the application.
+- **VirusTotal API Key:** Your API key for integrating VirusTotal's scanning capabilities.
+
+### Configuration Table
+
+| Setting               | Description                                           |
+|-----------------------|-------------------------------------------------------|
+| Upload Folder         | Directory for storing uploaded files.                 |
+| Capa Rules Path       | Folder path for Capa rules.                           |
+| Analysis Files Folder | Location for analysis reports and temporary files.    |
+| App Secret Key        | Secret key for securing cookies and sessions.         |
+| Allowed Extensions    | File types permitted for upload.                      |
+| Admin Password        | Password for administrative access.                   |
+| VirusTotal API Key    | API key for VirusTotal integration.                   |
+
+Adjust these settings as needed to tailor the application to your specific requirements and security standards.
+
 
 
 <p align="center">
