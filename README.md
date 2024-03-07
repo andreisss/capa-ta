@@ -27,6 +27,8 @@ The capa-ta web leverages the **Capa tool** and **VT** API to detect capabilitie
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/45ee9a28-1e2b-4f10-b322-4cf39b9ec929)
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 
 - **Team Collaboration:** 
   - Create teams to share analysis reports effortlessly.
@@ -70,8 +72,12 @@ Our application offers a comprehensive set of functions to manage users and team
 
 Each of these functions is designed to simplify administrative tasks, making it straightforward to manage the application's user base and organizational setup.
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/fc308b42-abc7-41e6-af00-d1b9d0a14dcd)
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 
 # Admin Settings
@@ -91,6 +97,8 @@ Each of these functions is designed to simplify administrative tasks, making it 
 | VirusTotal API Key    | API key for VirusTotal integration.                   |
 
 </div>
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/6473f466-15a8-4a58-ab2e-70ef66ef7295)
