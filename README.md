@@ -6,7 +6,7 @@
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
 ![License](https://img.shields.io/github/license/andreisss/capa-ta)
 
-Capa-ta leverages advanced analysis techniques to dissect and understand malware at a deeper level. With over 1000 rules and growing, 
+Capa-ta leverages advanced analysis techniques to dissect and understand malware at a deeper level.
 Capa-ta helps security researchers and analysts automatically identify malware capabilities, making the analysis process faster and more comprehensive.
 
 ## Features
@@ -15,7 +15,10 @@ Capa-ta helps security researchers and analysts automatically identify malware c
 - **Extensive Rule Set:** With over 1000+ rules, Capa-ta can recognize a wide range of malware characteristics.
 - **Easy to Use:** Designed for usability, it integrates seamlessly into existing workflows.
 
-The capa-ta web leverages the **Capa tool** to detect capabilities in executable files, offering a collaborative platform with the following features:
+The capa-ta web leverages the **Capa tool** and **VT** API to detect capabilities in executable files, offering a collaborative platform with the following features:
+
+![image](https://github.com/andreisss/capa-ta/assets/10872139/45ee9a28-1e2b-4f10-b322-4cf39b9ec929)
+
 
 - **Team Collaboration:** 
   - Create teams to share analysis reports effortlessly.
@@ -29,12 +32,8 @@ The capa-ta web leverages the **Capa tool** to detect capabilities in executable
   - Emphasize the importance of active participation and collaboration.
   - Foster a culture of shared knowledge and collective problem-solving.
 
-## Elevate Your Malware Analysis with Capa-ta
 
 Enhance your team's executable analysis capabilities from the outset with **Capa-ta**. Dive into your first malware analysis approach armed with a tool designed to streamline and empower your investigative processes.
-
-- **Streamlined Analysis:** Leverage Capa-ta to dissect and understand executables with unparalleled efficiency.
-- **Team Empowerment:** Equip your team with the right tools from the get-go, ensuring a strong foundation for malware analysis.
 
 ```bash
 gunicorn -w 4 -b 143.181.123.123:7665 app:app
