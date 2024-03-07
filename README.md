@@ -45,7 +45,7 @@ Default access credentials: `admin / password123`
 - **Upload File:** Analyze files with ease.
 - **Collaborate with Your Team:** Use the Default team or assign specific teams for project management.
 
-![image](https://github.com/andreisss/capa-ta/assets/10872139/6731e571-1d2b-481e-9fe0-aaf7be167023)
+![image](https://github.com/andreisss/capa-ta/assets/10872139/3348c22c-ec81-45cd-8c62-2b29cf96574a)
 
 ## Quick Start
 
