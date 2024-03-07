@@ -16,6 +16,8 @@ This tool leverages the capabilities of two major resources:
 
 Capa-ta leverages advanced analysis techniques to dissect and understand malware and give your team the possibility to analyze malware.
 
+## Admin 
+----------------------------------------------------------------------------------------
 - **User Management**
   - **Create User:** Add new users to the application.
   - **Edit User:** Update user information and roles.
@@ -35,7 +37,7 @@ Capa-ta leverages advanced analysis techniques to dissect and understand malware
     - **Upload folder:** Decide which folder to upload the files.
       
 ## User Side
-
+----------------------------------------------------------------------------------------
 - **Upload File:** Submit files for analysis or review.
 - **Collaborate with Your Team:** Work together with team members on projects or analyses.
 - **Default Team:** Users not assigned to a specific team can use the Default team for their activities.
