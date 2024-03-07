@@ -19,7 +19,7 @@ Capa-ta leverages advanced analysis techniques to dissect and understand malware
 
 ## Features
 
-- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving hours of manual analysis.
+- **Automated Malware Analysis:** Quickly identifies known malware patterns, saving time of manual analysis.
 - **Extensive Rule Set:** With over 1000+ rules, Capa-ta can recognize a wide range of malware characteristics.
 - **Easy to Use:** Designed for usability, it integrates seamlessly into existing workflows.
 
