@@ -50,25 +50,32 @@ Default access credentials: `admin / password123`
 
 # Quick Start Guide
 
-Follow these steps to set up your environment:
+## Setup Instructions
 
-```shell
+To get started, run the following commands in your terminal:
+
+```bash
 # Install Python3 and pip3
 apt install python3-pip
-```
-# Install Gunicorn and launch your application
-apt install gunicorn
-gunicorn -w 4 -b your_ip:7665 app:app
-# Note: Replace 'your_ip' with your actual IP address.
 
-# After installation, perform the following steps:
-# 1. Log in to the admin console with username 'admin' and password 'password123'.
-# 2. Navigate to settings and configure the following:
-   - Default Capa Rules Directory
-   - Upload Folder
-   - App Secret Key
-   - Admin Password
-   - VT API Key
+# Install Gunicorn
+apt install gunicorn
+
+# Launch your application with Gunicorn
+gunicorn -w 4 -b <your_ip>:7665 app:app
+# Replace <your_ip> with your actual IP address
+
+# Access the admin console using:
+# Username: admin
+# Password: password123
+
+# Configure your settings in the admin console:
+# - Default Capa Rules Directory
+# - Upload Folder
+# - App Secret Key
+# - Admin Password
+# - VT API Key
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
