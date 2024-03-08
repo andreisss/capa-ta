@@ -76,6 +76,10 @@ gunicorn -w 4 -b <your_ip>:7665 app:app
 # - Admin Password
 # - VT API Key
 
+You can change the folders or decide to use the default settings, in any case you have to create it:
+
+![image](https://github.com/andreisss/capa-ta/assets/10872139/0fb2d1a9-78cd-4251-b059-8482847eae30)
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
