@@ -8,6 +8,7 @@
 
 Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in executable files, offering a platform for automated malware analysis and team collaboration.
 
+
 ## Key Features
 
 - **Automated Malware Analysis:** Quickly identifies known malware patterns, saving manual analysis time.
