@@ -1,10 +1,10 @@
 # Capa-ta - Enhance Your Malware Analysis
 
-![PyPI](https://img.shields.io/pypi/v/capa-ta)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![Number of Rules](https://img.shields.io/badge/rules-1000+-brightgreen)
 ![Downloads](https://img.shields.io/github/downloads/andreisss/capa-ta/total.svg)
-![License](https://img.shields.io/github/license/andreisss/capa-ta)
 
 Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in executable files, offering a platform for automated malware analysis and team collaboration.
 
