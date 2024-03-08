@@ -55,13 +55,16 @@ Default access credentials: `admin / password123`
 - **Install Python3 and pip3:**  
   Run `sudo apt update && sudo apt install python3-pip -y`
 
+- **Install the python libraries:**
+  - pip3 install -r requirements.txt
+
 - **Install Capa and get it ready:**
 - wget https://github.com/mandiant/capa/releases/download/v7.0.1/capa-v7.0.1-linux.zip && sudo unzip capa-v7.0.1-linux.zip -d /usr/local/bin/ && sudo chmod +x /usr/local/bin/capa && rm capa-v7.0.1-linux.zip
 
-- **Download Cpa rules**
+- **Download Capa rules**
 - git clone https://github.com/mandiant/capa-rules.git into the folder declared
 
-- **Install Gunicorn:**  
+- **Install the web server Gunicorn:**  
   Execute `sudo apt install gunicorn -y`
 
 - **Launch Application with Gunicorn:**  
