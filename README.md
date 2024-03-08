@@ -20,27 +20,27 @@ Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in exe
 - **[Capa](https://github.com/mandiant/capa):** An open-source tool by Mandiant for automatic pattern detection in binary files.
 - **[VT API](https://docs.virustotal.com/):** VirusTotal's comprehensive file scanning API for applications.
 
-## Admin Features
+##### Admin Features
 
-### User and Team Management
+###### User and Team Management
 
 - **Create, Edit, Delete Users:** Manage user access and roles.
 - **Create, Modify, Delete Teams:** Organize users for better collaboration.
 
-### Settings Configuration
+###### Settings Configuration
 
 - **VT API Key:** Integrate VirusTotal's scanning capabilities.
 - **Admin Password:** Secure admin access.
 - **Capa Path & Analysis Folder:** Specify paths for Capa rules and analysis reports.
 - **Allowed Extensions & Upload Folder:** Control file uploads.
 
-### Admin GUI Access
+###### Admin GUI Access
 
 Default access credentials: `admin / password123`
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/8e217f01-9e5d-4624-b6d7-53e635b44316)
 
-## User Features
+##### User Features
 
 - **Upload File:** Analyze files with ease.
 - **Collaborate with Your Team:** Use the Default team or assign specific teams for project management.
@@ -50,31 +50,31 @@ Default access credentials: `admin / password123`
 
 # Quick Start Guide
 
-## Setup Instructions
+##### Setup Instructions
 
 To get started, run the following commands in your terminal:
 
 ```bash
-# Install Python3 and pip3
+#### Install Python3 and pip3
 apt install python3-pip
 ```
-# Install Gunicorn
+#### Install Gunicorn
 apt install gunicorn
 
-# Launch your application with Gunicorn
+#### Launch your application with Gunicorn
 gunicorn -w 4 -b <your_ip>:7665 app:app
-# Replace <your_ip> with your actual IP address
+#### Replace <your_ip> with your actual IP address
 
-# Access the admin console using:
-# Username: admin
-# Password: password123
+#### Access the admin console using:
+#### Username: admin
+#### Password: password123
 
-# Configure your settings in the admin console:
-# - Default Capa Rules Directory
-# - Upload Folder
-# - App Secret Key
-# - Admin Password
-# - VT API Key
+#### Configure your settings in the admin console:
+#### - Default Capa Rules Directory
+#### - Upload Folder
+#### - App Secret Key
+#### - Admin Password
+#### - VT API Key
 
 You can change the folders or decide to use the default settings, in any case you have to create it:
 
