@@ -55,6 +55,12 @@ Default access credentials: `admin / password123`
 - **Install Python3 and pip3:**  
   Run `sudo apt update && sudo apt install python3-pip -y`
 
+- **Install Capa and get it ready:**
+- wget https://github.com/mandiant/capa/releases/download/v7.0.1/capa-v7.0.1-linux.zip && sudo unzip capa-v7.0.1-linux.zip -d /usr/local/bin/ && sudo chmod +x /usr/local/bin/capa && rm capa-v7.0.1-linux.zip
+
+- **Download Cpa rules**
+- git clone https://github.com/mandiant/capa-rules.git into the folder declared
+
 - **Install Gunicorn:**  
   Execute `sudo apt install gunicorn -y`
 
@@ -74,6 +80,7 @@ Default access credentials: `admin / password123`
   - VT API Key
 
 *Ensure all necessary folders are created if you decide to use custom settings.*
+
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/c2fe0699-e6b9-4880-96f3-cfc6392cbbb4)
 
