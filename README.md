@@ -48,20 +48,33 @@ Default access credentials: `admin / password123`
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/3348c22c-ec81-45cd-8c62-2b29cf96574a)
 
 
+# Quick Start
 
-## Quick Start
+Follow these steps to get started:
 
-** 1) Install python3 and pip3 -> apt install python3-pip 
+1. **Install python3 and pip3**
 
-** 2) Launch Capa-ta with Gunicorn- > apt install gunicorn
 
-```bash
-gunicorn -w 4 -b your_ip:7665 app:app
-```
 
-** 3) Login in the amdin cosole: admin - password123
+2. **Launch Capa-ta with Gunicorn**
+First, install Gunicorn:
 
-** 4) Go in settings and set the defualt capa rules direcotry, upload folder, App Secret Key, Admin password and VT api.
+Then, start your application with Gunicorn by replacing `your_ip` with your actual IP address:
+
+
+3. **Log in to the Admin Console**
+Access the admin console using the following credentials:
+- Username: `admin`
+- Password: `password123`
+
+4. **Configure Settings**
+In the settings page, set the following configurations:
+- Default Capa Rules Directory
+- Upload Folder
+- App Secret Key
+- Admin Password
+- VT API Key
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 
