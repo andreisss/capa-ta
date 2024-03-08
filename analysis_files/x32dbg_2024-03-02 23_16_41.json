@@ -1,0 +1,238 @@
+{
+    "md5": "c5e3224a7c2dbf91cb682d690395e833",
+    "sha1": "367ac4115fab3852107a31a87624ce4bb4984ce6",
+    "sha256": "59283dbd3ab6ce79ee47635f8f51b251f4be60a1f6a250c682ce3996132d761c",
+    "path": "/tmp/x32dbg.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "i386",
+    "os": "windows",
+    "file_hash": "59283dbd3ab6ce79ee47635f8f51b251f4be60a1f6a250c682ce3996132d761c",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "File and Directory Discovery",
+            "subtechnique": "",
+            "id": "T1083"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "File System",
+                "Create File"
+            ],
+            "objective": "File System",
+            "behavior": "Create File",
+            "method": "",
+            "id": "C0016"
+        },
+        {
+            "parts": [
+                "File System",
+                "Get File Attributes"
+            ],
+            "objective": "File System",
+            "behavior": "Get File Attributes",
+            "method": "",
+            "id": "C0049"
+        },
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "File System",
+                "Create Directory"
+            ],
+            "objective": "File System",
+            "behavior": "Create Directory",
+            "method": "",
+            "id": "C0046"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "File and Directory Discovery",
+            "method": "",
+            "id": "E1083"
+        },
+        {
+            "parts": [
+                "Process",
+                "Terminate Process"
+            ],
+            "objective": "Process",
+            "behavior": "Terminate Process",
+            "method": "",
+            "id": "C0018"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Analysis Tool Discovery",
+                "Process detection"
+            ],
+            "objective": "Discovery",
+            "behavior": "Analysis Tool Discovery",
+            "method": "Process detection",
+            "id": "B0013.001"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "create or open file",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "joakim@intezer.com"
+            ]
+        },
+        {
+            "name": "get file attributes",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "delay execution",
+            "description": "",
+            "references": [
+                "https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions",
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "@ramen0x3f"
+            ]
+        },
+        {
+            "name": "create directory",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "get common file path",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "link function at runtime on Windows",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "check if file exists",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "terminate process",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "get thread local storage value",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "print debug messages",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "link many functions at runtime",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "joakim@intezer.com"
+            ]
+        },
+        {
+            "name": "contains PDB path",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "reference analysis tools strings",
+            "description": "",
+            "references": [
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiAnalysis/process.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        }
+    ],
+    "timestamp": "2024-03-02 23:16:41"
+}

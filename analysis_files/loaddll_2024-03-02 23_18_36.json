@@ -1,0 +1,138 @@
+{
+    "md5": "2ca1482dbc0a2f98ea417a8568589ee6",
+    "sha1": "487652e8e5bdcb632a82df7661730bd8378283d1",
+    "sha256": "ba85ad57f3114e3ccb164d6877bd110d28b9518aeff221a0addaff49bcf2e229",
+    "path": "/tmp/loaddll.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "i386",
+    "os": "windows",
+    "file_hash": "ba85ad57f3114e3ccb164d6877bd110d28b9518aeff221a0addaff49bcf2e229",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "File System",
+                "Create File"
+            ],
+            "objective": "File System",
+            "behavior": "Create File",
+            "method": "",
+            "id": "C0016"
+        },
+        {
+            "parts": [
+                "File System",
+                "Read File"
+            ],
+            "objective": "File System",
+            "behavior": "Read File",
+            "method": "",
+            "id": "C0051"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "delay execution",
+            "description": "",
+            "references": [
+                "https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions",
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "@ramen0x3f"
+            ]
+        },
+        {
+            "name": "create or open file",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "joakim@intezer.com"
+            ]
+        },
+        {
+            "name": "read file via mapping",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "get thread local storage value",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "print debug messages",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "link function at runtime on Windows",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "link many functions at runtime",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "joakim@intezer.com"
+            ]
+        },
+        {
+            "name": "contains PDB path",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        }
+    ],
+    "timestamp": "2024-03-02 23:18:36"
+}

@@ -1,0 +1,126 @@
+{
+    "md5": "c08b31b655b5a5193314560afb841839",
+    "sha1": "4220ecd44537642639df59f90d3f7c7b51198947",
+    "sha256": "1ff8a903cd48ca8f5cb74fae09f71f0561ef4eeb0a8c578b592779ce93fe2d7f",
+    "path": "/tmp/dsrole.dll",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "1ff8a903cd48ca8f5cb74fae09f71f0561ef4eeb0a8c578b592779ce93fe2d7f",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Query Registry"
+            ],
+            "tactic": "Discovery",
+            "technique": "Query Registry",
+            "subtechnique": "",
+            "id": "T1012"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Create Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Create Registry Key",
+            "id": "C0036.004"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Open Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Open Registry Key",
+            "id": "C0036.003"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Query Registry Value"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Query Registry Value",
+            "id": "C0036.006"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "create or open registry key",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "print debug messages",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "get hostname",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "joakim@intezer.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "query or enumerate registry value",
+            "description": "",
+            "references": [],
+            "authors": [
+                "william.ballenthin@mandiant.com",
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        }
+    ],
+    "timestamp": "2024-03-03 20:00:15"
+}

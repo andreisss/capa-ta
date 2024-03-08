@@ -1,0 +1,16 @@
+{
+    "md5": "843304d33ae8a8f0b40cc75bfcbcfa60",
+    "sha1": "70419ef1ed1d521fa48efb04454ae3739860b1d1",
+    "sha256": "9ed9bcb8ab1b45d2fc6d0dd67090457fc8fee21571376f46576acb83e31091fd",
+    "path": "/tempone/KBDUR.DLL",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "9ed9bcb8ab1b45d2fc6d0dd67090457fc8fee21571376f46576acb83e31091fd",
+    "ATT&CK": [],
+    "MBC": [],
+    "capabilities": [],
+    "windows_api": [],
+    "timestamp": "2024-03-08 20:09:55"
+}

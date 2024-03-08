@@ -1,0 +1,68 @@
+{
+    "md5": "03bc842f42d37cf96498288b7735b4e3",
+    "sha1": "a008b8bdcf0402d0e2d97a6c5a4252e103c19520",
+    "sha256": "99a130b5a146e057f1619b6de75c56df8a67e1e079a6cb01583a60ca51ba071c",
+    "path": "/tmp/msfeedssync.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "99a130b5a146e057f1619b6de75c56df8a67e1e079a6cb01583a60ca51ba071c",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "Process",
+                "Terminate Process"
+            ],
+            "objective": "Process",
+            "behavior": "Terminate Process",
+            "method": "",
+            "id": "C0018"
+        }
+    ],
+    "capabilities": [],
+    "timestamp": "2024-03-02 22:17:19"
+}

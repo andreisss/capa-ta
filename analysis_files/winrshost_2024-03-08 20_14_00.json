@@ -1,0 +1,201 @@
+{
+    "md5": "82b7d0239f6240cb0163aa37ad15d2f6",
+    "sha1": "71589ce0dec65f31da7718f315fbde6b8ade0655",
+    "sha256": "92797b305f231ccff2a969854ae78aec660fdad3770fba1c0496b705ff61b523",
+    "path": "/tempone/winrshost.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "92797b305f231ccff2a969854ae78aec660fdad3770fba1c0496b705ff61b523",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Defense Evasion",
+                "Hide Artifacts",
+                "Hidden Window"
+            ],
+            "tactic": "Defense Evasion",
+            "technique": "Hide Artifacts",
+            "subtechnique": "Hidden Window",
+            "id": "T1564.003"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "Process",
+                "Open Process"
+            ],
+            "objective": "Process",
+            "behavior": "Open Process",
+            "method": "",
+            "id": "C0065"
+        },
+        {
+            "parts": [
+                "Process",
+                "Create Process"
+            ],
+            "objective": "Process",
+            "behavior": "Create Process",
+            "method": "",
+            "id": "C0017"
+        },
+        {
+            "parts": [
+                "Process",
+                "Terminate Process"
+            ],
+            "objective": "Process",
+            "behavior": "Terminate Process",
+            "method": "",
+            "id": "C0018"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Console"
+            ],
+            "objective": "Operating System",
+            "behavior": "Console",
+            "method": "",
+            "id": "C0033"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "delay execution",
+            "description": "",
+            "references": [
+                "https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions",
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "@ramen0x3f"
+            ]
+        },
+        {
+            "name": "hide graphical window",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "open process",
+            "description": "",
+            "references": [],
+            "authors": [
+                "0x534a@mailbox.org"
+            ]
+        },
+        {
+            "name": "create process on Windows",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "parse PE header",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "terminate process",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "get OS version",
+            "description": "",
+            "references": [],
+            "authors": [
+                "@mr-tz"
+            ]
+        },
+        {
+            "name": "check OS version",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "johnk3r"
+            ]
+        },
+        {
+            "name": "manipulate console buffer",
+            "description": "",
+            "references": [
+                "https://stackoverflow.com/a/15770935/87207"
+            ],
+            "authors": [
+                "william.ballenthin@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        }
+    ],
+    "windows_api": [],
+    "timestamp": "2024-03-08 20:14:00"
+}

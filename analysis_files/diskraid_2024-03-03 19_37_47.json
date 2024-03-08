@@ -1,0 +1,207 @@
+{
+    "md5": "229592d7c7778f5126ce353802dde17f",
+    "sha1": "bf9af419f584302ed1c8f8e8781c1ede66ca5c60",
+    "sha256": "03b0bb59daed6362d651e5f983ff7d57aa63d06ffee7c195610909434081994f",
+    "path": "/tmp/diskraid.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "03b0bb59daed6362d651e5f983ff7d57aa63d06ffee7c195610909434081994f",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "File and Directory Discovery",
+            "subtechnique": "",
+            "id": "T1083"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "Process",
+                "Terminate Process"
+            ],
+            "objective": "Process",
+            "behavior": "Terminate Process",
+            "method": "",
+            "id": "C0018"
+        },
+        {
+            "parts": [
+                "Communication",
+                "Socket Communication",
+                "Initialize Winsock Library"
+            ],
+            "objective": "Communication",
+            "behavior": "Socket Communication",
+            "method": "Initialize Winsock Library",
+            "id": "C0001.009"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "File and Directory Discovery",
+            "method": "",
+            "id": "E1083"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Code Discovery",
+                "Enumerate PE Sections"
+            ],
+            "objective": "Discovery",
+            "behavior": "Code Discovery",
+            "method": "Enumerate PE Sections",
+            "id": "B0046.001"
+        },
+        {
+            "parts": [
+                "File System",
+                "Writes File"
+            ],
+            "objective": "File System",
+            "behavior": "Writes File",
+            "method": "",
+            "id": "C0052"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "delay execution",
+            "description": "",
+            "references": [
+                "https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions",
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "@ramen0x3f"
+            ]
+        },
+        {
+            "name": "parse PE header",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "terminate process",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "initialize Winsock library",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "get hostname",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "joakim@intezer.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "get file version info",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "enumerate PE sections",
+            "description": "",
+            "references": [
+                "https://0x00sec.org/t/reflective-dll-injection/3080",
+                "https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection"
+            ],
+            "authors": [
+                "@Ana06",
+                "@mr-tz"
+            ]
+        },
+        {
+            "name": "write file on Windows",
+            "description": "",
+            "references": [],
+            "authors": [
+                "william.ballenthin@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        }
+    ],
+    "timestamp": "2024-03-03 19:37:47"
+}

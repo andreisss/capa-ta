@@ -1,0 +1,276 @@
+{
+    "md5": "356ed0fc156993551a484964f99e65b8",
+    "sha1": "6b936b5a5b4451bc4f147dad6cd2a7072a799d03",
+    "sha256": "37621bdac3ced1103278e8c0ef7b73dfa1cbe9becfbaff421a46fbc78d636b5f",
+    "path": "/tmp/tcpvcon.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "i386",
+    "os": "windows",
+    "file_hash": "37621bdac3ced1103278e8c0ef7b73dfa1cbe9becfbaff421a46fbc78d636b5f",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Privilege Escalation",
+                "Access Token Manipulation"
+            ],
+            "tactic": "Privilege Escalation",
+            "technique": "Access Token Manipulation",
+            "subtechnique": "",
+            "id": "T1134"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "File and Directory Discovery",
+            "subtechnique": "",
+            "id": "T1083"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Query Registry"
+            ],
+            "tactic": "Discovery",
+            "technique": "Query Registry",
+            "subtechnique": "",
+            "id": "T1012"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Command and Scripting Interpreter"
+            ],
+            "tactic": "Execution",
+            "technique": "Command and Scripting Interpreter",
+            "subtechnique": "",
+            "id": "T1059"
+        },
+        {
+            "parts": [
+                "Execution",
+                "System Services",
+                "Service Execution"
+            ],
+            "tactic": "Execution",
+            "technique": "System Services",
+            "subtechnique": "Service Execution",
+            "id": "T1569.002"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Create Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Create Registry Key",
+            "id": "C0036.004"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Open Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Open Registry Key",
+            "id": "C0036.003"
+        },
+        {
+            "parts": [
+                "Process",
+                "Open Process"
+            ],
+            "objective": "Process",
+            "behavior": "Open Process",
+            "method": "",
+            "id": "C0065"
+        },
+        {
+            "parts": [
+                "File System",
+                "Create File"
+            ],
+            "objective": "File System",
+            "behavior": "Create File",
+            "method": "",
+            "id": "C0016"
+        },
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Debugger Detection",
+                "Process Environment Block"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Debugger Detection",
+            "method": "Process Environment Block",
+            "id": "B0001.019"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "File and Directory Discovery",
+            "method": "",
+            "id": "E1083"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Query Registry Value"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Query Registry Value",
+            "id": "C0036.006"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Set Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Set Registry Key",
+            "id": "C0036.001"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Command and Scripting Interpreter"
+            ],
+            "objective": "Execution",
+            "behavior": "Command and Scripting Interpreter",
+            "method": "",
+            "id": "E1059"
+        },
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Debugger Detection",
+                "Timing/Delay Check GetTickCount"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Debugger Detection",
+            "method": "Timing/Delay Check GetTickCount",
+            "id": "B0001.032"
+        },
+        {
+            "parts": [
+                "Communication",
+                "Socket Communication",
+                "Initialize Winsock Library"
+            ],
+            "objective": "Communication",
+            "behavior": "Socket Communication",
+            "method": "Initialize Winsock Library",
+            "id": "C0001.009"
+        },
+        {
+            "parts": [
+                "Process",
+                "Terminate Process"
+            ],
+            "objective": "Process",
+            "behavior": "Terminate Process",
+            "method": "",
+            "id": "C0018"
+        },
+        {
+            "parts": [
+                "Process",
+                "Allocate Thread Local Storage"
+            ],
+            "objective": "Process",
+            "behavior": "Allocate Thread Local Storage",
+            "method": "",
+            "id": "C0040"
+        },
+        {
+            "parts": [
+                "Process",
+                "Set Thread Local Storage Value"
+            ],
+            "objective": "Process",
+            "behavior": "Set Thread Local Storage Value",
+            "method": "",
+            "id": "C0041"
+        },
+        {
+            "parts": [
+                "File System",
+                "Writes File"
+            ],
+            "objective": "File System",
+            "behavior": "Writes File",
+            "method": "",
+            "id": "C0052"
+        },
+        {
+            "parts": [
+                "File System",
+                "Read File"
+            ],
+            "objective": "File System",
+            "behavior": "Read File",
+            "method": "",
+            "id": "C0051"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Analysis Tool Discovery",
+                "Process detection"
+            ],
+            "objective": "Discovery",
+            "behavior": "Analysis Tool Discovery",
+            "method": "Process detection",
+            "id": "B0013.001"
+        }
+    ],
+    "capabilities": [],
+    "timestamp": "2024-03-02 21:27:22"
+}

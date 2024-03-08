@@ -1,0 +1,152 @@
+{
+    "md5": "bf473b5a5408549c5c3acc5a8401a8a0",
+    "sha1": "f1c1ba1c5e8da5632c0824883e114ca199c9b75d",
+    "sha256": "4aecf83482cfd4b23fc7a609e1cbfaf960f999cee367ef247ca77f63bc3b30e7",
+    "path": "/tmp/DevicePairingWizard.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "4aecf83482cfd4b23fc7a609e1cbfaf960f999cee367ef247ca77f63bc3b30e7",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "File and Directory Discovery",
+            "subtechnique": "",
+            "id": "T1083"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "Process",
+                "Terminate Process"
+            ],
+            "objective": "Process",
+            "behavior": "Terminate Process",
+            "method": "",
+            "id": "C0018"
+        },
+        {
+            "parts": [
+                "Process",
+                "Create Mutex"
+            ],
+            "objective": "Process",
+            "behavior": "Create Mutex",
+            "method": "",
+            "id": "C0042"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "File and Directory Discovery",
+            "method": "",
+            "id": "E1083"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "delay execution",
+            "description": "",
+            "references": [
+                "https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions",
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "@ramen0x3f"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "parse PE header",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "terminate process",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com",
+                "anushka.virgaonkar@mandiant.com"
+            ]
+        },
+        {
+            "name": "print debug messages",
+            "description": "",
+            "references": [],
+            "authors": [
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "create mutex",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "link function at runtime on Windows",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        },
+        {
+            "name": "check if file exists",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com",
+                "michael.hunhoff@mandiant.com"
+            ]
+        }
+    ],
+    "timestamp": "2024-03-03 19:59:25"
+}

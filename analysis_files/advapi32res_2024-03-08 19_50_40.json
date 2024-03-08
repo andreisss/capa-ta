@@ -1,0 +1,16 @@
+{
+    "md5": "fe91d11a48d1bead77b2d18406603920",
+    "sha1": "3906cca39e9e3ba9ecf31de04453b7efcd8cd155",
+    "sha256": "5f8816e7b3e5cdc4e1fe63f9ab5d6b5dc4b358d737c7016ac1db2a252f0a1a43",
+    "path": "/tempone/advapi32res.dll",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "5f8816e7b3e5cdc4e1fe63f9ab5d6b5dc4b358d737c7016ac1db2a252f0a1a43",
+    "ATT&CK": [],
+    "MBC": [],
+    "capabilities": [],
+    "windows_api": [],
+    "timestamp": "2024-03-08 19:50:40"
+}

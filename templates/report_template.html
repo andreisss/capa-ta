@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Report</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Custom CSS for additional styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Detailed Report</h1>
+        <!-- Expanded File Details Section -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>File Details</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                                <tr><th scope="row">File Name</th><td>{{ report.path.split('/').pop() }}</td></tr>
+                                <tr><th scope="row">Timestamp</th><td>{{ report.timestamp }}</td></tr>
+                                <tr><th scope="row">MD5 Hash</th><td>{{ report.md5 }}</td></tr>
+                                <tr><th scope="row">SHA-1 Hash</th><td>{{ report.sha1 }}</td></tr>
+                                <tr><th scope="row">SHA-256 Hash</th><td>{{ report.sha256 }}</td></tr>
+                                <tr><th scope="row">Analysis</th><td>{{ report.flavor }}</td></tr>
+                                <tr><th scope="row">OS</th><td>{{ report.os }}</td></tr>
+                                <tr><th scope="row">Architecture</th><td>{{ report.arch }}</td></tr>
+                                <tr><th scope="row">Full Path</th><td>{{ report.path }}</td></tr>
+                                <!-- Additional fields can be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Analysis Section -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>ATT&CK Tactics and Techniques</h2>
+                    </div>
+            <div class="card-body">
+                <ul>
+                    {% for item in report['ATT&CK'] %}
+                        <li>{{ item.tactic }}: {{ item.technique }} ({{ item.id }})</li>
+                    {% endfor %}
+                </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>MBC Objectives and Behaviors</h2>
+                    </div>
+                    <div class="card-body">
+           <ul>
+                {% for item in report.MBC %}
+                    <li>{{ item.objective }}: {{ item.behavior }} [{{ item.id }}]</li>
+                {% endfor %}
+            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Capabilities</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Capability</th>
+                                    <th>Description</th>
+                                    <th>References</th>
+                                    <th>Authors</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in report.capabilities %}
+                                    <tr>
+                                        <td>{{ item.name }}</td>
+                                        <td>{{ item.description }}</td>
+                                        <td>
+                                            <ul>
+                                                {% for reference in item.references %}
+                                                    <li><a href="{{ reference }}">{{ reference }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>{{ item.authors | join(", ") }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+{% if virustotal_summary %}
+    <div class="accordion" id="accordionVirusTotal">
+        <div class="card">
+            <div class="card-header">
+                <h2>VirusTotal Summary</h2>
+            </div>
+            <div class="card-body">
+
+
+                <!-- Processes Terminated Section -->
+                <h3>Processes Terminated</h3>
+                {% if virustotal_summary.processes_terminated %}
+                    <ul>
+                        {% for process in virustotal_summary.processes_terminated %}
+                            <li>{{ process }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No processes terminated.</p>
+                {% endif %}
+
+{% if virustotal_summary.processes_tree %}
+    <!-- Processes Tree Section -->
+    <h3>Processes Tree</h3>
+    <ul>
+        {% for process in virustotal_summary.processes_tree %}
+            <li>
+                {{ process.name }} (ID: {{ process.process_id }})
+                {% if process.children %}
+                    <ul>
+                        {% for child in process.children %}
+                            <li>{{ child.name }} (ID: {{ child.process_id }})</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+<!-- Files Dropped Section -->
+<h3>Files Dropped</h3>
+{% if virustotal_summary.files_dropped %}
+    <ul>
+        {% for file in virustotal_summary.files_dropped %}
+            <li>{{ file.path }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No files dropped available.</p>
+{% endif %}
+
+<!-- Files Opened Section -->
+<h3>Files Opened</h3>
+{% if virustotal_summary.files_opened %}
+    <ul>
+        {% for file in virustotal_summary.files_opened %}
+            <li>{{ file.path }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No files opened available.</p>
+{% endif %}
+
+<!-- Files Deleted Section -->
+<h3>Files Deleted</h3>
+{% if virustotal_summary.files_deleted %}
+    <ul>
+        {% for file in virustotal_summary.files_deleted %}
+            <li>{{ file.path }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No files deleted available.</p>
+{% endif %}
+
+
+
+<!-- Registry Keys Opened Section -->
+<h3>Registry Keys Opened</h3>
+{% if virustotal_summary.registry_keys_opened %}
+    <ul>
+        {% for registry_key in virustotal_summary.registry_keys_opened %}
+            <li>{{ registry_key }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No registry keys opened available.</p>
+{% endif %}
+
+<!-- Registry Keys Set Section -->
+<h3>Registry Keys Set</h3>
+{% if virustotal_summary.registry_keys_set %}
+    <ul>
+        {% for reg_key in virustotal_summary.registry_keys_set %}
+            <li>{{ reg_key.key }}: {{ reg_key.value }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No registry keys set available.</p>
+{% endif %}
+
+<!-- IP Traffic Section -->
+<h3>IP Traffic</h3>
+{% if virustotal_summary.ip_traffic %}
+    <ul>
+        {% for traffic in virustotal_summary.ip_traffic %}
+            <li>{{ traffic.destination_ip }}:{{ traffic.destination_port }} ({{ traffic.transport_layer_protocol }})</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No IP traffic available.</p>
+{% endif %}
+
+
+<!-- Mutexes Created Section -->
+<h3>Mutexes Created</h3>
+{% if virustotal_summary.mutexes_created %}
+    <ul>
+        {% for mutex in virustotal_summary.mutexes_created %}
+            <li>{{ mutex }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No mutexes created available.</p>
+{% endif %}
+
+
+<!-- HTTP Conversations Section -->
+<h3>HTTP Conversations</h3>
+{% if virustotal_summary.http_conversations %}
+    <ul>
+        {% for conversation in virustotal_summary.http_conversations %}
+            <li>{{ conversation.url }} - {{ conversation.request_method }}{% if conversation.request_headers %} - Headers: {{ conversation.request_headers | tojson }}{% endif %}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No HTTP conversations available.</p>
+{% endif %}
+
+
+<!-- Tags Section -->
+<h3>Tags</h3>
+{% if virustotal_summary.tags %}
+    <ul>
+        {% for tag in virustotal_summary.tags %}
+            <li>{{ tag }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No tags available.</p>
+{% endif %}
+
+
+<!-- Attack Techniques Section -->
+{% if virustotal_summary.attack_techniques %}
+    <h3>Attack Techniques</h3>
+    <ul>
+        {% for technique_id, techniques in virustotal_summary.attack_techniques.items() %}
+            <li>{{ technique_id }}
+                <ul>
+                    {% for technique in techniques %}
+                        <li>{{ technique.description }} (Severity: {{ technique.severity }})</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<!-- Memory Pattern URLs Section -->
+<h3>Memory Pattern URLs</h3>
+{% if virustotal_summary.memory_pattern_urls %}
+    <ul>
+        {% for url in virustotal_summary.memory_pattern_urls %}
+            <li>{{ url }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No memory pattern URLs available.</p>
+{% endif %}
+
+
+<!-- DNS Lookups Section -->
+<h3>DNS Lookups</h3>
+{% if virustotal_summary.dns_lookups %}
+    <ul>
+        {% for lookup in virustotal_summary.dns_lookups %}
+            <li>{{ lookup.hostname }}{% if lookup.resolved_ips %} - Resolved IPs: {{ lookup.resolved_ips | join(", ") }}{% endif %}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No DNS lookups available.</p>
+{% endif %}
+
+
+<!-- Verdicts Section with Verdict Confidence -->
+{% if virustotal_summary.verdicts %}
+    <h3>Verdicts</h3>
+    <ul>
+        {% for verdict in virustotal_summary.verdicts %}
+            <li>{{ verdict }}</li>
+        {% endfor %}
+    </ul>
+    <!-- Display Verdict Confidence if available -->
+    {% if virustotal_summary.verdict_confidence is not none %}
+        <p>Verdict Confidence: {{ virustotal_summary.verdict_confidence }}</p>
+    {% endif %}
+    <hr>
+{% endif %}
+
+
+            </div>
+        </div>
+    </div>
+{% else %}
+    <p>VirusTotal summary not available or not provided.</p>
+{% endif %}
+
+
+    <!-- jQuery and Bootstrap scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.collapse').collapse('hide');
+            $('.card-header button').click(function(){
+                $(this).closest('.card').find('.collapse').collapse('toggle');
+            });
+        });
+    </script>
+
+</body>
+</body>
+</html>

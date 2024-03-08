@@ -1,0 +1,244 @@
+{
+    "md5": "145a432cdb6730612a1270880d0d301d",
+    "sha1": "acd6c3ec638e9a55860081fdd9a740cecbb99197",
+    "sha256": "bdeb5d4324cfbd538dc2b8ff5708f189870854ba8c1c6085d4f6742ab8502f2b",
+    "path": "/tmp/x96dbg.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "i386",
+    "os": "windows",
+    "file_hash": "bdeb5d4324cfbd538dc2b8ff5708f189870854ba8c1c6085d4f6742ab8502f2b",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "File and Directory Discovery",
+            "subtechnique": "",
+            "id": "T1083"
+        },
+        {
+            "parts": [
+                "Persistence",
+                "Boot or Logon Autostart Execution",
+                "Shortcut Modification"
+            ],
+            "tactic": "Persistence",
+            "technique": "Boot or Logon Autostart Execution",
+            "subtechnique": "Shortcut Modification",
+            "id": "T1547.009"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Defense Evasion",
+                "Subvert Trust Controls",
+                "Mark-of-the-Web Bypass"
+            ],
+            "tactic": "Defense Evasion",
+            "technique": "Subvert Trust Controls",
+            "subtechnique": "Mark-of-the-Web Bypass",
+            "id": "T1553.005"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Command and Scripting Interpreter"
+            ],
+            "tactic": "Execution",
+            "technique": "Command and Scripting Interpreter",
+            "subtechnique": "",
+            "id": "T1059"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Data",
+                "Modulo"
+            ],
+            "objective": "Data",
+            "behavior": "Modulo",
+            "method": "",
+            "id": "C0058"
+        },
+        {
+            "parts": [
+                "Process",
+                "Create Process"
+            ],
+            "objective": "Process",
+            "behavior": "Create Process",
+            "method": "",
+            "id": "C0017"
+        },
+        {
+            "parts": [
+                "Process",
+                "Open Process"
+            ],
+            "objective": "Process",
+            "behavior": "Open Process",
+            "method": "",
+            "id": "C0065"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Create Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Create Registry Key",
+            "id": "C0036.004"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Open Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Open Registry Key",
+            "id": "C0036.003"
+        },
+        {
+            "parts": [
+                "File System",
+                "Get File Attributes"
+            ],
+            "objective": "File System",
+            "behavior": "Get File Attributes",
+            "method": "",
+            "id": "C0049"
+        },
+        {
+            "parts": [
+                "File System",
+                "Create File"
+            ],
+            "objective": "File System",
+            "behavior": "Create File",
+            "method": "",
+            "id": "C0016"
+        },
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Set Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Set Registry Key",
+            "id": "C0036.001"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "File and Directory Discovery",
+            "method": "",
+            "id": "E1083"
+        },
+        {
+            "parts": [
+                "File System",
+                "Writes File"
+            ],
+            "objective": "File System",
+            "behavior": "Writes File",
+            "method": "",
+            "id": "C0052"
+        },
+        {
+            "parts": [
+                "File System",
+                "Read File"
+            ],
+            "objective": "File System",
+            "behavior": "Read File",
+            "method": "",
+            "id": "C0051"
+        },
+        {
+            "parts": [
+                "File System",
+                "Delete File"
+            ],
+            "objective": "File System",
+            "behavior": "Delete File",
+            "method": "",
+            "id": "C0047"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Command and Scripting Interpreter"
+            ],
+            "objective": "Execution",
+            "behavior": "Command and Scripting Interpreter",
+            "method": "",
+            "id": "E1059"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Analysis Tool Discovery",
+                "Process detection"
+            ],
+            "objective": "Discovery",
+            "behavior": "Analysis Tool Discovery",
+            "method": "Process detection",
+            "id": "B0013.001"
+        }
+    ],
+    "capabilities": [],
+    "timestamp": "2024-03-02 22:18:46"
+}

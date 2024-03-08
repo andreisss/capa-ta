@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Details</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">    <style>
+
+		<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <style>
+        .analysis-history { margin-top: 20px; }
+        .report-link { margin-left: 10px; }
+        .back-button { margin-top: 20px; }
+    </style>
+    <script>
+        function downloadReport(reportId) {
+            // This function will make a request to the server to download the report
+            window.location.href = `/download_report/${reportId}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        {% if team_data %}
+            <h2>Team: {{ team_data.name }}</h2>
+            {% if team_data.info %}
+                <p>{{ team_data.info }}</p>
+            {% endif %}
+        {% else %}
+            <p>Team data not found.</p>
+        {% endif %}
+        
+<!-- Analysis History Section -->
+<div class="analysis-history">
+    <h3>Analysis History</h3>
+    {% if analysis_history %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">File Name</th>
+                    <th scope="col">Timestamp</th>
+                    <th scope="col">Report</th>
+                </tr>
+            </thead>
+            <tbody>
+    {% for record in analysis_history %}
+        <tr>
+            <td>{{ record.file_name }}</td>
+            <td>{{ record.timestamp }}</td>
+            <td>
+                {% if record.file_hash %}
+                    <a href="{{ url_for('view_report', file_hash=record.file_hash) }}" class="btn btn-info btn-sm">View Report</a>
+                {% else %}
+                    <span>No Report Available</span>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>
+
+        </table>
+    {% else %}
+        <p>No analysis history found.</p>
+    {% endif %}
+</div>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if page > 1 %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('team_page', team_name=team_data.name, page=1) }}">First</a></li>
+            <li class="page-item"><a class="page-link" href="{{ url_for('team_page', team_name=team_data.name, page=page-1) }}">Previous</a></li>
+        {% endif %}
+        
+        <!-- Dynamic Pagination Links -->
+        {% set link_range = 2 %}
+        {% for i in range(page-link_range, page+link_range+1) %}
+            {% if i > 0 and i <= total_pages %}
+                <li class="page-item {% if i == page %}active{% endif %}"><a class="page-link" href="{{ url_for('team_page', team_name=team_data.name, page=i) }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+        
+        {% if page < total_pages %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('team_page', team_name=team_data.name, page=page+1) }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="{{ url_for('team_page', team_name=team_data.name, page=total_pages) }}">Last</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="{{ url_for('user_dashboard') }}" class="btn btn-secondary">Go Back</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery-3.5.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

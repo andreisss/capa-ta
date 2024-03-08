@@ -1,0 +1,172 @@
+{
+    "md5": "e911a217d43ff6c453785e5606b46ce5",
+    "sha1": "510c712a3ae8f376070438618a50c7399ef8b0dd",
+    "sha256": "05dbb43499bcff44424c7ac2d987ea9e9742cd90afe360e84ba0bccade17f71b",
+    "path": "/tmp/strings64.exe",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "05dbb43499bcff44424c7ac2d987ea9e9742cd90afe360e84ba0bccade17f71b",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "File and Directory Discovery",
+            "subtechnique": "",
+            "id": "T1083"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Query Registry"
+            ],
+            "tactic": "Discovery",
+            "technique": "Query Registry",
+            "subtechnique": "",
+            "id": "T1012"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Command and Scripting Interpreter"
+            ],
+            "tactic": "Execution",
+            "technique": "Command and Scripting Interpreter",
+            "subtechnique": "",
+            "id": "T1059"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "tactic": "Discovery",
+            "technique": "System Information Discovery",
+            "subtechnique": "",
+            "id": "T1082"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Create Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Create Registry Key",
+            "id": "C0036.004"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Open Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Open Registry Key",
+            "id": "C0036.003"
+        },
+        {
+            "parts": [
+                "File System",
+                "Create File"
+            ],
+            "objective": "File System",
+            "behavior": "Create File",
+            "method": "",
+            "id": "C0016"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "File and Directory Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "File and Directory Discovery",
+            "method": "",
+            "id": "E1083"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Query Registry Value"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Query Registry Value",
+            "id": "C0036.006"
+        },
+        {
+            "parts": [
+                "Execution",
+                "Command and Scripting Interpreter"
+            ],
+            "objective": "Execution",
+            "behavior": "Command and Scripting Interpreter",
+            "method": "",
+            "id": "E1059"
+        },
+        {
+            "parts": [
+                "Operating System",
+                "Registry",
+                "Set Registry Key"
+            ],
+            "objective": "Operating System",
+            "behavior": "Registry",
+            "method": "Set Registry Key",
+            "id": "C0036.001"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "System Information Discovery"
+            ],
+            "objective": "Discovery",
+            "behavior": "System Information Discovery",
+            "method": "",
+            "id": "E1082"
+        },
+        {
+            "parts": [
+                "File System",
+                "Read File"
+            ],
+            "objective": "File System",
+            "behavior": "Read File",
+            "method": "",
+            "id": "C0051"
+        },
+        {
+            "parts": [
+                "Discovery",
+                "Analysis Tool Discovery",
+                "Process detection"
+            ],
+            "objective": "Discovery",
+            "behavior": "Analysis Tool Discovery",
+            "method": "Process detection",
+            "id": "B0013.001"
+        }
+    ],
+    "capabilities": [],
+    "timestamp": "2024-03-02 21:43:06"
+}

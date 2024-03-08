@@ -1,0 +1,32 @@
+{
+    "users": [
+        {
+            "id": 9,
+            "name": "gifA",
+            "team_id": 6
+        },
+        {
+            "id": 10,
+            "name": "cazlloooo",
+            "team_id": 3
+        }
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "name": "Team Alpha"
+        },
+        {
+            "id": 15,
+            "name": "Default Team"
+        },
+        {
+            "id": 16,
+            "name": "Team Avengers"
+        },
+        {
+            "id": 17,
+            "name": "CapitanAmerica"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">    <style>
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+        #gameSection { display: none; }
+        .logo { width: 100px; height: auto; margin-bottom: 20px; }
+        .btn-upload { background-color: #007bff; color: #fff; }
+        .btn-upload:hover { background-color: #0056b3; }
+        .btn-go-back { margin-top: 20px; }
+        .form-container { background-color: #f8f9fa; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .mb-4 { margin-bottom: 1.5rem!important; }
+		
+}
+
+    </style>
+</head>
+    <div class="container mt-5">
+        <!-- Welcome Section -->
+        <div class="text-center mb-5">
+            <h2>Welcome, {{ username }}</h2>
+            <!-- Logout Button -->
+<form action="{{ url_for('logout') }}" method="post">
+    <button type="submit" class="btn btn-danger">Logout</button>
+</form>
+        </div>
+        <!-- Rest of your HTML content -->
+
+<div class="mb-5">
+    <h3>Your Team</h3>
+    {% if user_teams %}
+        <ul class="list-group">
+            {% for team in user_teams %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{{ team.url }}">{{ team.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You are currently not assigned to any team.</p>
+    {% endif %}
+</div>
+
+
+<!-- File Upload Section -->
+<div class="form-container text-center">
+    <div class="logo-container mb-4">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="Logo">
+        <img src="{{ url_for('static', filename='img/sal.png') }}" class="logo" alt="Piu Logo">
+        <img src="{{ url_for('static', filename='img/vt.png') }}" class="logo" alt="VT Logo">
+    </div>
+    <h2 class="mb-4">Upload a File for Analysis</h2>
+    <form action="{{ url_for('upload_and_analyze') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" class="form-control mb-3" required>
+        <button type="submit" class="btn btn-upload">Upload</button>
+    </form>
+    <a href="#" onclick="history.back()" class="btn btn-outline-secondary btn-go-back">Go Back</a>
+</div>
+<script src="{{ url_for('static', filename='js/jquery-3.5.1.slim.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</body>
+</html>
+

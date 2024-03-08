@@ -1,0 +1,14 @@
+{
+    "UPLOAD_FOLDER": "/tempone",
+    "CAPA_RULES_PATH": "/capa-rules/capa-rules",
+    "SECRET_KEY": "secretnicekey",
+    "ALLOWED_EXTENSIONS": [
+        "exe",
+        "dll",
+        "bin",
+        "sys"
+    ],
+    "ANALYSIS_FILES_FOLDER": "/root/capa-ta/analysis_files",
+    "ADMIN_PASS": "",
+    "VIRUSTOTAL_API_KEY": "0000000000000000000000000000000000000"
+}

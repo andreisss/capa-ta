@@ -1,0 +1,47 @@
+
+    /* Existing styles */
+    .custom-table {
+        border-collapse: collapse;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .custom-table th, .custom-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .custom-table th {
+        background-color: #04AA6D;
+        color: white;
+    }
+    .custom-table tr:nth-child(even){background-color: #f2f2f2;}
+    .custom-table tr:hover {background-color: #ddd;}
+    .custom-table ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .custom-table a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .custom-table a:hover {
+        text-decoration: underline;
+    }
+
+    /* New style to keep text on one line */
+    .custom-table td {
+        white-space: nowrap; /* Prevents wrapping and keeps text in a single line */
+        overflow: hidden; /* Ensures overflow content is not visible */
+        text-overflow: ellipsis; /* Adds ellipsis to indicate text overflow */
+        max-width: 150px; /* Adjust as needed */
+    }
+
+		.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100px; /* Adjust based on your preference */
+    margin: 0 10px; /* Space between logos */

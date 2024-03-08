@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"></head>
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Adjusted to start from the top */
+            height: 100vh;
+            padding-top: 50px; /* Adjusted top padding for space */
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Adjust the top margin as needed */
+        }
+        .form-control-file {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .btn-upload {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        .btn-upload:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .btn-go-back {
+            margin-top: 20px; /* Adjust top margin as needed */
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-go-back:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="Logo">
+    <div class="form-container">
+        <h2 class="mb-4">Upload a File for Analysis</h2>
+        <!-- Adjusted form action to include Blueprint's url_prefix -->
+<form id="uploadForm" action="/capa-analysis/analyze" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="fileUpload" class="form-label">Choose file</label>
+                <input class="form-control-file" type="file" id="fileUpload" name="file">
+            </div>
+            <button type="submit" class="btn btn-upload">Upload and Analyze</button>
+        </form>
+    </div>
+    <a href="#" onclick="history.back()" class="btn btn-go-back">Go Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script> <!-- Ensure you use the full version of jQuery -->
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<script>
+$(document).ready(function() {
+    $('#uploadForm').submit(function(e) {
+        const fileInput = document.getElementById('fileUpload');
+        const maxSize = 3 * 1024 * 1024; // 3MB
+        
+        if (fileInput.files.length > 0) {
+            const fileSize = fileInput.files[0].size;
+            
+            if (fileSize > maxSize) {
+                alert('File size exceeds 3 MB. Please choose a smaller file.');
+                e.preventDefault(); // Prevent form submission
+                return false; // Stop further execution
+            }
+        } else {
+            alert('Please select a file to upload.');
+            e.preventDefault();
+            return false;
+        }
+    });
+});
+</script>
+</body>
+</html>

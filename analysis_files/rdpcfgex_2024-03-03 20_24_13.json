@@ -1,0 +1,67 @@
+{
+    "md5": "f1ec57b02e5aeeffb5de5e0816316890",
+    "sha1": "4be20eeae223b009db3f619453830c07c57058e8",
+    "sha256": "eaeac983eea7ae77e98482bbeaeb676bec5ebec645ef2f535c95f147dca4ac35",
+    "path": "/tmp/rdpcfgex.dll",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "eaeac983eea7ae77e98482bbeaeb676bec5ebec645ef2f535c95f147dca4ac35",
+    "ATT&CK": [
+        {
+            "parts": [
+                "Execution",
+                "Shared Modules"
+            ],
+            "tactic": "Execution",
+            "technique": "Shared Modules",
+            "subtechnique": "",
+            "id": "T1129"
+        }
+    ],
+    "MBC": [
+        {
+            "parts": [
+                "Anti-Behavioral Analysis",
+                "Dynamic Analysis Evasion",
+                "Delayed Execution"
+            ],
+            "objective": "Anti-Behavioral Analysis",
+            "behavior": "Dynamic Analysis Evasion",
+            "method": "Delayed Execution",
+            "id": "B0003.003"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "delay execution",
+            "description": "",
+            "references": [
+                "https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions",
+                "https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp"
+            ],
+            "authors": [
+                "michael.hunhoff@mandiant.com",
+                "@ramen0x3f"
+            ]
+        },
+        {
+            "name": "contain loop",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        },
+        {
+            "name": "parse PE header",
+            "description": "",
+            "references": [],
+            "authors": [
+                "moritz.raabe@mandiant.com"
+            ]
+        }
+    ],
+    "timestamp": "2024-03-03 20:24:13"
+}

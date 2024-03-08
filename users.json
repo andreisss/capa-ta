@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "scrypt:32768:8:1$Oa5CsAPrGlx5lgbt$cf915d8f769c716918fbe8a1c8ece30a85827276365a251babc93521a6242cf28d4498de4a19824527948a403e7a95df558b063b61fac9ec174f6d834141a83f",
+            "role": "admin"
+        },
+        {
+            "id": 6,
+            "username": "tomas",
+            "password": "scrypt:32768:8:1$XsWMgO6KHDCyb7vJ$b58663fa12ccd6e8c3eb144295c9e10d040d50c40571d06d2467390f6fb00f45b1e2b335687a9d7e99e8041ba5165b366fae2c29e8c59987b4ad371ceb78d213",
+            "team_id": "2",
+            "role": "user"
+        },
+        {
+            "id": 7,
+            "username": "hulk",
+            "password": "scrypt:32768:8:1$9nEWo7U3P7mgHwIb$f1ce0a5710d0ab552480074c0a8da2f50b155ef904dc6da0cdb2fe0a025450c3dd6016751e9ccde0a0027edb5a29c349e74f494177b7ef06b0bb0355a7fb8d6d",
+            "team_id": "16",
+            "role": "user"
+        }
+    ]
+}

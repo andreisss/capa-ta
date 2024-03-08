@@ -1,0 +1,16 @@
+{
+    "md5": "77fea7714b4892f35ae19c0832a3e234",
+    "sha1": "edeb255f26b220cdd40763fe027d9d065bdb2206",
+    "sha256": "1185efbcbe628dc6281f5c9839e82d90a1e48c595293706829fe3d230ab339d0",
+    "path": "/tempone/Microsoft-Windows-MosHost.dll",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "i386",
+    "os": "windows",
+    "file_hash": "1185efbcbe628dc6281f5c9839e82d90a1e48c595293706829fe3d230ab339d0",
+    "ATT&CK": [],
+    "MBC": [],
+    "capabilities": [],
+    "windows_api": [],
+    "timestamp": "2024-03-08 20:04:07"
+}

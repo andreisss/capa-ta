@@ -1,0 +1,16 @@
+{
+    "md5": "b211fa4b89cba7c61696120102bb8948",
+    "sha1": "2dda4ff3e9640a790f72f7201eaef84beb8a58f2",
+    "sha256": "c528df2da6d15d084030f3374a20938b7377aeea699f2543bed1e453a4c5e9b2",
+    "path": "/tempone/bridgeres.dll",
+    "flavor": "static",
+    "format": "pe",
+    "arch": "amd64",
+    "os": "windows",
+    "file_hash": "c528df2da6d15d084030f3374a20938b7377aeea699f2543bed1e453a4c5e9b2",
+    "ATT&CK": [],
+    "MBC": [],
+    "capabilities": [],
+    "windows_api": [],
+    "timestamp": "2024-03-08 19:58:48"
+}
