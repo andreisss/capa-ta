@@ -57,7 +57,7 @@ To get started, run the following commands in your terminal:
 ```bash
 # Install Python3 and pip3
 apt install python3-pip
-
+```
 # Install Gunicorn
 apt install gunicorn
 
