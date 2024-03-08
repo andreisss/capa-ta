@@ -78,9 +78,6 @@ Default access credentials: `admin / password123`
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/c2fe0699-e6b9-4880-96f3-cfc6392cbbb4)
 
 
-![image](https://github.com/andreisss/capa-ta/assets/10872139/0fb2d1a9-78cd-4251-b059-8482847eae30)
-
-
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 
