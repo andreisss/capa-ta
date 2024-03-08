@@ -55,7 +55,7 @@ Follow these steps to set up your environment:
 ```shell
 # Install Python3 and pip3
 apt install python3-pip
-
+```
 # Install Gunicorn and launch your application
 apt install gunicorn
 gunicorn -w 4 -b your_ip:7665 app:app
@@ -69,7 +69,6 @@ gunicorn -w 4 -b your_ip:7665 app:app
    - App Secret Key
    - Admin Password
    - VT API Key
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
