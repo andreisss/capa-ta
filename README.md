@@ -47,7 +47,6 @@ Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in exe
 
 Default access credentials: `admin / password123`
 
-![image](https://github.com/andreisss/capa-ta/assets/10872139/8e217f01-9e5d-4624-b6d7-53e635b44316)
 
 ##### User Features
 
