@@ -83,7 +83,7 @@ Default access credentials: `admin / password123`
   - Admin Password
   - VT API Key
 
-*Ensure all necessary folders are created and the path is well declared in the Admin Settings.
+**Ensure all necessary folders are created and the path is well declared in the Admin Settings**
 
 
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/c2fe0699-e6b9-4880-96f3-cfc6392cbbb4)
