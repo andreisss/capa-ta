@@ -17,109 +17,66 @@
         margin: 0;
     }
     .login-container {
-        display: flex; /* Use flexbox to align items horizontally */
+        display: flex;
+        flex-direction: column; /* Change to column layout for a vertical arrangement */
         width: 100%;
-        max-width: 1000px; /* Increase total max-width for more space */
+        max-width: 400px; /* Set a max width for the container to control form width */
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden; /* Keep everything contained within the rounded border */
+        padding: 20px; /* Added padding for the container */
     }
-    .logo-section {
-        flex: 1; /* Adjust this value to change the logo section size */
-        background: #0056b3; /* Background color for the logo section */
-        color: white; /* For white text color */
+    .login-container img.vt-logo-full {
+        max-width: 60%; /* Adjust logo size */
+        height: auto; /* Maintain aspect ratio */
+        margin: 20px auto; /* Center logo and add vertical spacing */
+        display: block;
+    }
+    .login-form {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        flex-direction: column; /* Stack items vertically */
-        padding: 20px;
-    }
-    .form-section {
-        flex: 2; /* Increase this value to allocate more space to the form */
-        padding: 40px; /* Padding around the form */
     }
     .login-form input[type="text"],
     .login-form input[type="password"] {
-        width: 100%; /* Full width of the form section */
+        width: 90%; /* Adjust input width */
         padding: 10px;
-        margin-bottom: 15px;
+        margin: 10px 0; /* Add margin for spacing */
         border: 1px solid #ced4da;
         border-radius: 5px;
     }
     .login-form button {
-        width: 100%;
-        padding: 10px 0;
+        width: 90%; /* Match input width */
+        padding: 10px;
+        margin-top: 10px;
         border: none;
         border-radius: 5px;
         background-color: #007bff;
         color: white;
-        font-size: 18px;
+        font-size: 16px; /* Adjust font size as needed */
         cursor: pointer;
     }
     .login-form button:hover {
         background-color: #0056b3;
     }
-    .vt-logo {
-        width: 60px; /* Smaller width for the VT logo */
-        height: auto; /* Maintain aspect ratio */
-    }
-	
-	    .form-section {
-        flex: 1; /* Take up equal space as the logo section */
-        padding: 60px; /* Increased top and bottom padding for a taller form appearance */
-    }
-    .login-form input[type="text"],
-    .login-form input[type="password"] {
-        width: 100%; /* Full width of the form section */
-        padding: 15px; /* Increased padding for taller input fields */
-        margin-bottom: 20px; /* Optionally increase for more vertical space between fields */
-        border: 1px solid #ced4da;
-        border-radius: 5px;
-    }
-    .login-form button {
-        width: 100%;
-        padding: 15px 0; /* Increased padding for a taller button */
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-    }
-
     </style>
 </head>
 <body>
 
 <div class="login-container">
-    <div class="logo-section">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
-            <!-- "-TA" text directly below the logo -->
-            <span style="font-size: 24px; font-weight: bold; color: #FFF;">TA</span>
-        </div>
-        <!-- VT logo with the .vt-logo class to make it smaller -->
-        <img src="{{ url_for('static', filename='img/vt.png') }}" class="vt-logo" alt="VT Logo">
-        <!-- You can add more logos or text here if needed -->
-    </div>
-
-
-
-    <div class="form-section">
-        <form class="login-form" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </div>
+    <img src="{{ url_for('static', filename='img/vt.png') }}" class="vt-logo-full" alt="VT Logo">
+    <form class="login-form" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 </div>
 
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
