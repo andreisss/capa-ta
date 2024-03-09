@@ -4,6 +4,7 @@ import logging
 import math
 import os
 import pytz
+import requests
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from multiprocessing import Pool
@@ -34,14 +35,16 @@ from werkzeug.utils import secure_filename
 
 from auth import auth_bp
 from capa_analysis import capa_analysis_bp
-from config import Config
-from models import User
 
+from models import User
+# Enable DEBUG logs for urllib3
+logging.getLogger("urllib3").setLevel(logging.DEBUG)
+logging.getLogger("urllib3.connectionpool").setLevel(logging.DEBUG)
 
 # Set the logging level to DEBUG
 logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
-app.config.from_object(Config)
+
 app.register_blueprint(auth_bp, url_prefix='/auth')
 
 # Register blueprint for capa-analysis
@@ -57,32 +60,6 @@ app.config['BASE_DIR'] = os.path.dirname(os.path.abspath(__file__))
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-@app.route('/update_admin_password', methods=['POST'])
-def update_admin_password():
-    if not is_admin():
-        flash('Only admin can perform this action.', 'danger')
-        return redirect(url_for('login'))
-
-    # Assuming the request contains JSON with the new password
-    new_password_plain = request.json.get('new_password')
-    if not new_password_plain:
-        return jsonify({'error': 'Missing new password'}), 400
-    
-    new_password_hashed = generate_password_hash(new_password_plain)
-
-    data = read_database()
-    admin_updated = False
-    for user in data['users']:
-        if user['id'] == 1 and user['role'] == 'admin':
-            user['password'] = new_password_hashed
-            admin_updated = True
-            break
-
-    if admin_updated:
-        write_database(data)
-        return jsonify({'message': 'Admin password updated successfully'}), 200
-    else:
-        return jsonify({'error': 'Admin user not found'}), 404
 
 def teams():
     if request.method == 'GET':
@@ -153,12 +130,6 @@ def admin_required(f):
 
 
 def localize_timestamps(records, target_timezone='Europe/Paris'):
-    """
-    Adjusts the timestamps in the records to a specified time zone and formats them for display.
-    :param records: List of dictionaries containing the report data.
-    :param target_timezone: String name of the target time zone for conversion.
-    :return: The adjusted records with timestamps formatted for display.
-    """
     tz = pytz.timezone(target_timezone)
     for record in records:
         # Assume 'timestamp' is in UTC and in '%Y-%m-%d %H:%M:%S' format
@@ -168,14 +139,21 @@ def localize_timestamps(records, target_timezone='Europe/Paris'):
         record['timestamp'] = local_dt.strftime('%Y-%m-%d %I:%M:%S %p %Z')
     return records
     
-
-
- 
  
 @login_manager.unauthorized_handler
 def unauthorized_callback():
     return redirect(url_for('login'))
 
+def update_app_config():
+    """Reloads settings from settings.json into app.config."""
+    try:
+        with open('settings.json') as json_file:
+            settings = json.load(json_file)
+            app.config.update(settings)
+    except Exception as e:
+        logging.error(f"Failed to reload app config: {e}")
+        
+        
    
 @app.route('/settings')
 def settings():
@@ -197,67 +175,46 @@ def show_settings():
     # Pass the settings to the HTML template
     return render_template('settings.html', settings=current_settings)
 
-# Update settings from settings.json
-def update_app_config():
-    """Reloads settings from settings.json into app.config."""
-    try:
-        with open('settings.json') as json_file:
-            settings = json.load(json_file)
-            
-        # Updating app.config with settings from settings.json
-        app.config['UPLOAD_FOLDER'] = settings.get('UPLOAD_FOLDER', app.config['UPLOAD_FOLDER'])
-        app.config['CAPA_RULES_PATH'] = settings.get('CAPA_RULES_PATH', app.config['CAPA_RULES_PATH'])
-        app.config['SECRET_KEY'] = settings.get('SECRET_KEY', app.config['SECRET_KEY'])
-        app.config['ALLOWED_EXTENSIONS'] = settings.get('ALLOWED_EXTENSIONS', app.config['ALLOWED_EXTENSIONS'])
-        app.config['ANALYSIS_FILES_FOLDER'] = settings.get('ANALYSIS_FILES_FOLDER', app.config['ANALYSIS_FILES_FOLDER'])
-        app.config['ADMIN_PASS'] = settings.get('ADMIN_PASS', app.config['ADMIN_PASS'])
-    except FileNotFoundError as e:
-        print(f"Error loading settings from settings.json: {e}")
-    except json.JSONDecodeError as e:
-        print(f"Error decoding settings.json: {e}")
-
-# Ensure to call update_app_config() at application start to load initial settings
-update_app_config()
-
-
 @app.route('/update_settings', methods=['POST'])
 def update_settings():
-    app.logger.info('Received settings update request')  # Log the start of the operation
+    if not request.is_json:
+        return jsonify({"error": "Request must be JSON"}), 400
 
-    data = request.get_json()  # Parse JSON data from request
-    if not data:
-        app.logger.error('Invalid or missing JSON data')  # Log error if data is missing or invalid
-        return jsonify({'error': 'Invalid or missing JSON data'}), 400
+    data = request.get_json()
+    
+    with open('settings.json', 'r+') as file:
+        settings = json.load(file)
+        settings.update({
+            'UPLOAD_FOLDER': data.get('upload_folder', settings['UPLOAD_FOLDER']),
+            'CAPA_RULES_PATH': data.get('capa_rules_path', settings['CAPA_RULES_PATH']),
+            'ANALYSIS_FILES_FOLDER': data.get('analysis_files_folder', settings['ANALYSIS_FILES_FOLDER']),
+            'SECRET_KEY': data.get('secret_key', settings['SECRET_KEY']),
+            'VIRUSTOTAL_API_KEY': data.get('virustotal_api_key', settings['VIRUSTOTAL_API_KEY'])
+            # Note: Do not directly update 'ADMIN_PASS' here
+        })
 
-    # Logging received form data for debugging purposes
-    app.logger.info(f'Received form data: {data}')
+        if 'admin_pass' in data and data['admin_pass']:
+            admin_pass_hashed = generate_password_hash(data['admin_pass'])
 
-    new_settings = {
-        'UPLOAD_FOLDER': data.get('upload_folder'),
-        'CAPA_RULES_PATH': data.get('capa_rules_path'),
-        'SECRET_KEY': data.get('secret_key'),
-        'ALLOWED_EXTENSIONS': data.get('allowed_extensions'),
-        'ANALYSIS_FILES_FOLDER': data.get('analysis_files_folder'),
-        'ADMIN_PASS': data.get('admin_pass'),
-        'VIRUSTOTAL_API_KEY': data.get('virustotal_api_key')
-    }
+            with open('users.json', 'r+') as users_file:
+                users = json.load(users_file)
+                for user in users.get('users', []):
+                    if user['id'] == 1 and user['role'] == 'admin':
+                        user['password'] = admin_pass_hashed
+                        break
+                users_file.seek(0)
+                json.dump(users, users_file, indent=4)
+                users_file.truncate()
 
-    # Your existing logic to update settings
+        # Save the updated settings back to 'settings.json'
+        file.seek(0)
+        json.dump(settings, file, indent=4)
+        file.truncate()
+        # Call to reload app.config after updating settings.json
+        update_app_config()
 
-    # Persist new settings to settings.json
-    try:
-        with open('settings.json', 'w') as json_file:
-            json.dump(data, json_file, indent=4)
-    except IOError as e:
-        app.logger.error('Failed to update settings.json: %s', str(e))
-        return jsonify({'error': 'Failed to persist settings'}), 500
-
-    app.logger.info('Settings updated successfully: %s', data)
-    return jsonify({'message': 'Settings updated successfully!'})
-
-
-# Ensure to call update_app_config() at application start to load initial settings
-update_app_config()  
+    return jsonify({"message": "Settings updated successfully"})
+ 
 
 @app.route('/users', methods=['GET', 'POST'])
 def users():
@@ -475,16 +432,24 @@ def view_report(file_hash):
         if filename.endswith('.json'):
             with open(os.path.join(reports_directory, filename), 'r') as file:
                 try:
-                    data = json.load(file)
-                    if 'file_hash' in data and data['file_hash'] == file_hash:
+                    report_data = json.load(file)
+                    if 'file_hash' in report_data and report_data['file_hash'] == file_hash:
                         logging.info(f'Found matching report file: {filename}')
-                        return render_template('report_template.html', report=data, report_data=json.dumps(data))
+                        
+                        # Fetch the VirusTotal summary
+                        virustotal_summary = get_virustotal_summary(file_hash)
+                        
+                        # Pass the VirusTotal summary to the template
+                        return render_template('report_template.html', 
+                                               report=report_data, 
+                                               virustotal_summary=virustotal_summary)
                 except json.JSONDecodeError:
                     logging.error(f'Failed to parse JSON in file: {filename}')
                     continue
 
-    logging.error('Report not found')
+    flash('Report not found', 'error')
     return 'Report not found', 404
+
 
 
 @app.route('/download_report/<file_hash>')
@@ -506,16 +471,192 @@ def download_report(file_hash):
 
     logging.error('Report not found')
     return 'Report not found', 404
+
+def parse_process_tree(processes):
+    parsed_processes = []
+    for process in processes:
+        parsed_process = {
+            'process_id': process.get('process_id'),
+            'name': process.get('name'),
+            'children': parse_process_tree(process.get('children', []))  # Recursive call for children
+        }
+        parsed_processes.append(parsed_process)
+    return parsed_processes
+
+def safe_get(dct, *keys, default=None):
+    """
+    Safely get a value from a nested dictionary using a sequence of keys.
+    Returns the value if found, otherwise returns the specified default value.
+    """
+    for key in keys:
+        try:
+            if dct is not None:
+                dct = dct.get(key, default)
+            else:
+                return default
+        except AttributeError:
+            return default
+    return dct
+
+ 
+ 
+def parse_virustotal_response(data):
+    if data is None:
+        logging.error("Received None data in parse_virustotal_response")
+        return {
+            # Return default structure with empty values
+        }
+    
+    logging.debug("Raw data received: %s", data)
+
+    # Use safe_get for nested data access
+    verdict_confidence = safe_get(data, 'data', 'verdict_confidence', default=None)
+    
+    # Initialize the parsed_data dictionary with default values
+    parsed_data = {
+        'signatures': [],
+        'processes': [],
+        'registry_keys': [],
+        'tags': [],
+        'processes_tree': [],
+        'verdicts': [],
+        'processes_terminated': [],
+        'attack_techniques': {},
+        'verdict_confidence': verdict_confidence,
+        'files_dropped': [],
+        'file_opened': [],
+        'registry_keys_opened': [],
+        'dns_lookups': [],
+        'memory_pattern_urls': [],
+        'files_deleted': [],
+        'registry_keys_set': []
+    }
+
+    # Example of processing a list of dictionaries within the nested data
+    parsed_data['ip_traffic'] = [
+        {'destination_ip': ip.get('destination_ip'),
+         'destination_port': ip.get('destination_port'),
+         'transport_layer_protocol': ip.get('transport_layer_protocol')}
+        for ip in safe_get(data, 'data', 'ip_traffic', default=[])
+    ]
+    # Return the parsed data
+    
+    # Parse files_deleted
+    files_deleted_raw = data.get('data', {}).get('files_deleted', [])
+    parsed_data['files_deleted'] = [{'path': file_path} for file_path in files_deleted_raw]
+
+    # Parse tags
+    tags_raw = data.get('data', {}).get('tags', [])
+    parsed_data['tags'] = tags_raw
+
+    # Parse registry_keys_set
+    registry_keys_set_raw = data.get('data', {}).get('registry_keys_set', [])
+    parsed_data['registry_keys_set'] = [{'key': reg_key.get('key'), 'value': reg_key.get('value')} for reg_key in registry_keys_set_raw]
+    
+    # Parse memory_pattern_urls
+    memory_pattern_urls_raw = data.get('data', {}).get('memory_pattern_urls', [])
+    parsed_data['memory_pattern_urls'] = memory_pattern_urls_raw
+
+    # Parse dns_lookups
+    dns_lookups_raw = data.get('data', {}).get('dns_lookups', [])
+    parsed_data['dns_lookups'] = [{'hostname': lookup.get('hostname'), 'resolved_ips': lookup.get('resolved_ips', [])} for lookup in dns_lookups_raw]
+    
+    # Example parsing logic for 'registry_keys_opened'
+    registry_keys_opened_raw = data.get('data', {}).get('registry_keys_opened', [])
+    parsed_data['registry_keys_opened'] = [registry_key for registry_key in registry_keys_opened_raw]
+
+    
+    # Parse files_opened
+    files_opened_raw = data.get('data', {}).get('files_opened', [])
+    parsed_data['files_opened'] = [{'path': file_path} for file_path in files_opened_raw]
+
+    logging.debug("Parsed files opened: %s", parsed_data['files_opened'])
+
+
+    # Parse files_dropped
+    files_dropped_raw = data.get('data', {}).get('files_dropped', [])
+    parsed_data['files_dropped'] = [{'path': file_info.get('path')} for file_info in files_dropped_raw]
+
+    logging.debug("Parsed files dropped: %s", parsed_data['files_dropped'])
+
+    # Example parsing logic for 'verdicts' and 'processes_terminated'
+    parsed_data['verdicts'] = data.get('data', {}).get('verdicts', [])
+    parsed_data['processes_terminated'] = data.get('data', {}).get('processes_terminated', [])
     
     
+    # Parse 'processes_tree'
+    processes_tree_raw = data.get('data', {}).get('processes_tree', [])
+    parsed_data['processes_tree'] = parse_process_tree(processes_tree_raw)
+
+    logging.debug("Parsed processes tree: %s", parsed_data['processes_tree'])
+
+    # Debugging: print the fully parsed data before returning
+    logging.debug("Parsed data: %s", parsed_data)
+    
+    # Debugging: print the parsed verdicts and processes terminated
+    logging.debug("Parsed verdicts: %s", parsed_data['verdicts'])
+    logging.debug("Parsed processes terminated: %s", parsed_data['processes_terminated'])
+
+    # Example parsing logic for 'attack_techniques'
+    attack_techniques = data.get('data', {}).get('attack_techniques', {})
+    for technique_id, techniques in attack_techniques.items():
+        parsed_techniques = []
+        for technique in techniques:
+            parsed_techniques.append({
+                'severity': technique.get('severity', 'UNKNOWN'),
+                'description': technique.get('description', 'No description provided')
+            })
+        parsed_data['attack_techniques'][technique_id] = parsed_techniques
+
+    # Debugging: print the parsed attack techniques
+    logging.debug("Parsed attack techniques: %s", parsed_data['attack_techniques'])
+
+    # Debugging: print the fully parsed data before returning
+    logging.debug("Parsed data: %s", parsed_data)
+
+    return parsed_data
+    
+def get_virustotal_summary(file_hash):
+    api_key = app.config.get('VIRUSTOTAL_API_KEY')
+    if not api_key:
+        logging.error("VirusTotal API key is not configured.")
+        return None
+
+    url = f"https://www.virustotal.com/api/v3/files/{file_hash}/behaviour_summary"
+    headers = {"accept": "application/json", "x-apikey": api_key}
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Raises HTTPError for bad requests
+        logging.debug(f"VirusTotal response for {file_hash}: {response.text}")
+
+        # Safely attempt to parse JSON
+        try:
+            response_data = response.json()
+        except ValueError:
+            logging.error(f"Failed to decode JSON from VirusTotal response for {file_hash}")
+            return None
+
+        parsed_response = parse_virustotal_response(response_data)
+        return parsed_response
+    except requests.RequestException as e:
+        logging.error(f"Error fetching VirusTotal summary for {file_hash}: {e}")
+        return None
+
+
+ 
 def find_report_by_hash(file_hash):
-    reports_directory = app.config['ANALYSIS_FILES_FOLDER']
+    for filename in os.listdir(app.config['ANALYSIS_FILES_FOLDER']):
+        if filename.endswith('.json'):
+            with open(os.path.join(app.config['ANALYSIS_FILES_FOLDER'], filename), 'r') as file:
+                try:
+                    data = json.load(file)
+                    if 'file_hash' in data and data['file_hash'] == file_hash:
+                        return filename, data
+                except json.JSONDecodeError:
+                    logging.error(f'Failed to parse JSON in file: {filename}')
+    return None, None
 
-    for filename in os.listdir(reports_directory):
-        if file_hash in filename:
-            return os.path.join(reports_directory, filename)
-
-    return None
 
 @app.route('/analysis_files/<filename>')
 def download_file(filename):
@@ -621,6 +762,12 @@ def upload_and_analyze():
         # Calculate file hash
         with open(file_path, 'rb') as f:
             file_hash = hashlib.sha256(f.read()).hexdigest()
+        # Get VirusTotal summary using the file_hash
+        virustotal_summary = get_virustotal_summary(file_hash)
+        if virustotal_summary:
+            extracted_data['virustotal_summary'] = virustotal_summary
+        else:
+            logging.info("No VirusTotal summary available or an error occurred.")
         
         # Save extracted data to JSON file
         json_filename = generate_filename(filename, timestamp, 'json')
@@ -948,4 +1095,41 @@ def is_user_in_team(username, team_name):
     # For demonstration, let's say it returns True if the user is in the team, False otherwise
     user_team = get_user_team(username)  # Assuming this function returns the team name the user belongs to
     return user_team == team_name
+        
+
+
+# Example read_database and write_database functions (adjust according to your database handling)
+def read_database():
+    # Placeholder: read and return the user data structure, adjust to your actual data source
+    with open('users.json', 'r') as file:
+        return json.load(file)
+
+def write_database(data):
+    # Placeholder: write the modified user data structure back, adjust to your actual data source
+    with open('users.json', 'w') as file:
+        json.dump(data, file, indent=4)
+        
+def update_admin_password(new_password):
+    hashed_password = generate_password_hash(new_password)
+
+    # Update users.json
+    with open('users.json', 'r+') as file:
+        users = json.load(file)
+        for user in users.get('users', []):
+            if user['id'] == 1 and user['role'] == 'admin':
+                user['password'] = hashed_password
+                break
+        file.seek(0)
+        json.dump(users, file, indent=4)
+        file.truncate()
+
+    # Update settings.json (if needed, and only with non-sensitive data)
+    # This is illustrative; avoid storing passwords or sensitive information directly.
+    with open('settings.json', 'r+') as file:
+        settings = json.load(file)
+        # Assume you're updating a related setting that doesn't compromise security
+        settings['SOME_SETTING'] = "Updated Value Based on Admin Password Change"
+        file.seek(0)
+        json.dump(settings, file, indent=4)
+        file.truncate()        
         
