@@ -497,7 +497,6 @@ def safe_get(dct, *keys, default=None):
         except AttributeError:
             return default
     return dct
-
  
  
 def parse_virustotal_response(data):
@@ -522,7 +521,7 @@ def parse_virustotal_response(data):
         'verdicts': [],
         'processes_terminated': [],
         'attack_techniques': {},
-        'verdict_confidence': verdict_confidence,
+        'verdict_confidence': safe_get(data, 'data', 'verdict_confidence', default=None),
         'files_dropped': [],
         'file_opened': [],
         'registry_keys_opened': [],
@@ -532,86 +531,67 @@ def parse_virustotal_response(data):
         'registry_keys_set': []
     }
 
-    # Example of processing a list of dictionaries within the nested data
+    # Use safe_get for all nested data access to avoid AttributeError
     parsed_data['ip_traffic'] = [
         {'destination_ip': ip.get('destination_ip'),
          'destination_port': ip.get('destination_port'),
          'transport_layer_protocol': ip.get('transport_layer_protocol')}
         for ip in safe_get(data, 'data', 'ip_traffic', default=[])
     ]
-    # Return the parsed data
-    
-    # Parse files_deleted
-    files_deleted_raw = data.get('data', {}).get('files_deleted', [])
-    parsed_data['files_deleted'] = [{'path': file_path} for file_path in files_deleted_raw]
 
-    # Parse tags
-    tags_raw = data.get('data', {}).get('tags', [])
-    parsed_data['tags'] = tags_raw
+    # Process other fields using safe_get similarly...
+    parsed_data['files_deleted'] = [{'path': file_path} for file_path in safe_get(data, 'data', 'files_deleted', default=[])]
 
-    # Parse registry_keys_set
-    registry_keys_set_raw = data.get('data', {}).get('registry_keys_set', [])
-    parsed_data['registry_keys_set'] = [{'key': reg_key.get('key'), 'value': reg_key.get('value')} for reg_key in registry_keys_set_raw]
-    
-    # Parse memory_pattern_urls
-    memory_pattern_urls_raw = data.get('data', {}).get('memory_pattern_urls', [])
-    parsed_data['memory_pattern_urls'] = memory_pattern_urls_raw
+    parsed_data['tags'] = safe_get(data, 'data', 'tags', default=[])
 
-    # Parse dns_lookups
-    dns_lookups_raw = data.get('data', {}).get('dns_lookups', [])
-    parsed_data['dns_lookups'] = [{'hostname': lookup.get('hostname'), 'resolved_ips': lookup.get('resolved_ips', [])} for lookup in dns_lookups_raw]
-    
-    # Example parsing logic for 'registry_keys_opened'
-    registry_keys_opened_raw = data.get('data', {}).get('registry_keys_opened', [])
-    parsed_data['registry_keys_opened'] = [registry_key for registry_key in registry_keys_opened_raw]
+    parsed_data['registry_keys_set'] = [
+        {'key': reg_key.get('key'), 'value': reg_key.get('value')}
+        for reg_key in safe_get(data, 'data', 'registry_keys_set', default=[])
+    ]
 
-    
-    # Parse files_opened
-    files_opened_raw = data.get('data', {}).get('files_opened', [])
-    parsed_data['files_opened'] = [{'path': file_path} for file_path in files_opened_raw]
+    parsed_data['memory_pattern_urls'] = safe_get(data, 'data', 'memory_pattern_urls', default=[])
+
+    parsed_data['dns_lookups'] = [
+        {'hostname': lookup.get('hostname'), 'resolved_ips': lookup.get('resolved_ips', default=[])}
+        for lookup in safe_get(data, 'data', 'dns_lookups', default=[])
+    ]
+
+    parsed_data['registry_keys_opened'] = safe_get(data, 'data', 'registry_keys_opened', default=[])
+
+    parsed_data['files_opened'] = [{'path': file_path} for file_path in safe_get(data, 'data', 'files_opened', default=[])]
 
     logging.debug("Parsed files opened: %s", parsed_data['files_opened'])
 
 
-    # Parse files_dropped
-    files_dropped_raw = data.get('data', {}).get('files_dropped', [])
+    # Use safe_get for nested data access
+    files_dropped_raw = safe_get(data, 'data', 'files_dropped', default=[])
     parsed_data['files_dropped'] = [{'path': file_info.get('path')} for file_info in files_dropped_raw]
-
     logging.debug("Parsed files dropped: %s", parsed_data['files_dropped'])
 
-    # Example parsing logic for 'verdicts' and 'processes_terminated'
-    parsed_data['verdicts'] = data.get('data', {}).get('verdicts', [])
-    parsed_data['processes_terminated'] = data.get('data', {}).get('processes_terminated', [])
-    
-    
-    # Parse 'processes_tree'
-    processes_tree_raw = data.get('data', {}).get('processes_tree', [])
-    parsed_data['processes_tree'] = parse_process_tree(processes_tree_raw)
+    parsed_data['verdicts'] = safe_get(data, 'data', 'verdicts', default=[])
+    parsed_data['processes_terminated'] = safe_get(data, 'data', 'processes_terminated', default=[])
+    logging.debug("Parsed verdicts: %s", parsed_data['verdicts'])
+    logging.debug("Parsed processes terminated: %s", parsed_data['processes_terminated'])
 
+    # Assuming parse_process_tree is a function you've defined to specifically handle parsing the process tree
+    processes_tree_raw = safe_get(data, 'data', 'processes_tree', default=[])
+    parsed_data['processes_tree'] = parse_process_tree(processes_tree_raw) if processes_tree_raw else []
     logging.debug("Parsed processes tree: %s", parsed_data['processes_tree'])
 
     # Debugging: print the fully parsed data before returning
     logging.debug("Parsed data: %s", parsed_data)
-    
-    # Debugging: print the parsed verdicts and processes terminated
-    logging.debug("Parsed verdicts: %s", parsed_data['verdicts'])
-    logging.debug("Parsed processes terminated: %s", parsed_data['processes_terminated'])
 
-    # Example parsing logic for 'attack_techniques'
-    attack_techniques = data.get('data', {}).get('attack_techniques', {})
+    attack_techniques = safe_get(data, 'data', 'attack_techniques', default={})
     for technique_id, techniques in attack_techniques.items():
         parsed_techniques = []
         for technique in techniques:
             parsed_techniques.append({
                 'severity': technique.get('severity', 'UNKNOWN'),
-                'description': technique.get('description', 'No description provided')
+                'description': technique.get('description', 'No description provided'),
             })
         parsed_data['attack_techniques'][technique_id] = parsed_techniques
 
-    # Debugging: print the parsed attack techniques
     logging.debug("Parsed attack techniques: %s", parsed_data['attack_techniques'])
-
-    # Debugging: print the fully parsed data before returning
     logging.debug("Parsed data: %s", parsed_data)
 
     return parsed_data
