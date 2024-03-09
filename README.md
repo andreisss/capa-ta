@@ -23,12 +23,10 @@ Capa-ta leverages the **Capa tool** and **VT API** to detect capabilities in exe
 
 ##### Admin Demo
 
-![admin_backend](https://github.com/andreisss/capa-ta/assets/10872139/c84a34c7-48bb-46e5-acac-250b6e5d00e3)
 
 
 ##### Security Analyst Demo
 
-![capa-ta - front - 9m](https://github.com/andreisss/capa-ta/assets/10872139/b42f6ce3-172e-473d-b8cf-5e827b772d9f)
 
 
 ###### User and Team Management
