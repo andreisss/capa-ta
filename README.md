@@ -61,7 +61,7 @@ To get started with the project setup, follow these steps:
    chmod +x development.sh
    ```
 
-**Execute development.sh to automatically install necessary dependencies, download, and configure all required files and directories for the project.
+**Execute development.sh to automatically install necessary dependencies, download, and configure all required files and directories for the project.**
 
 ```bash
 ./development.sh
