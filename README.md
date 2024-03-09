@@ -51,7 +51,10 @@ Default access credentials: `admin / password123`
 
 # Quick Start Guide
 
-## Setup Instructions
+## Execute the Script: Run chmod +x development.sh and ./development.sh to automatically install necessary dependencies, download, and set up all required files and directories for the project. 
+## This script streamlines the initial setup process by ensuring every component is correctly installed and configured. 
+
+## Manual Setup Instructions
 
 - **Install Python3 and pip3:**  
   Run `sudo apt update && sudo apt install python3-pip -y`
