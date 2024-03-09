@@ -49,10 +49,24 @@ Default access credentials: `admin / password123`
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/3348c22c-ec81-45cd-8c62-2b29cf96574a)
 
 
-# Quick Start Guide
+## Quick Start Guide
 
-- **Execute the Script: Run chmod +x development.sh and ./development.sh to automatically install necessary dependencies, download, and set up all required files and directories for the project** 
-- **This script streamlines the initial setup process by ensuring every component is correctly installed and configured** 
+To get started with the project setup, follow these steps:
+
+**Make the Script Executable**
+
+   Grant execution permissions to the script by running the following command in your terminal:
+
+   ```bash
+   chmod +x development.sh
+   ```
+
+**Execute development.sh to automatically install necessary dependencies, download, and configure all required files and directories for the project.
+
+```bash
+./development.sh
+This script streamlines the initial setup process, ensuring a smooth and consistent setup experience.
+```
 
 ## Manual Setup Instructions
 
