@@ -43,9 +43,9 @@ Default access credentials: `admin / password123`
 
 ##### User Features
 
-- **Upload File:** Analyze files with ease.
-- **Collaborate with Your Team:** Use the Default team or assign specific teams for project management.
-
+- **Upload File:** File Upload: Streamline the analysis process by uploading files directly to the server. Note that all files will be automatically deleted after the upload is complete.
+- **Collaborate with Your Team:** Choose to work with the default team setup or assign custom teams for enhanced collaboration. This feature allows for seamless sharing of reports among team members, facilitating effective communication across multiple users.
+  
 ![image](https://github.com/andreisss/capa-ta/assets/10872139/3348c22c-ec81-45cd-8c62-2b29cf96574a)
 
 
